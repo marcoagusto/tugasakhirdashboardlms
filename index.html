@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard LMS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
+        integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="bg-primary-bg text-text-standard">
+    <header
+        class="bg-header-bg text-header-text-color p-4 shadow-md flex justify-between items-center h-16 sticky top-0 z-50">
+        <div class="flex items-center space-x-6">
+            <img src="https://lms.telkomuniversity.ac.id/pluginfile.php/1/theme_remui/logo/1746441839/logo-celoe-small%20%282%29%20%281%29%20%288%29%20%281%29.png"
+                alt="celoe Logo" class="h-8" />
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6 text-sm font-semibold">
+                    <li>
+                        <a href="#" class="text-header-text-color hover:text-gray-600">Categories</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-header-text-color hover:text-gray-600">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-header-text-color hover:text-gray-600">My courses</a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center space-x-1 text-header-text-color hover:text-gray-600">
+                            <span>Help Center</span></a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center space-x-1 text-header-text-color hover:text-gray-600">
+                            <span>Courses</span></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="flex items-center space-x-4">
+            <span class="text-sm cursor-pointer hover:text-gray-600">Recent <i
+                    class="fas fa-chevron-down ml-1 text-xs"></i></span>
+            <i class="fas fa-bell text-xl cursor-pointer hover:text-gray-600 relative">
+                <span id="notification-dot"
+                    class="absolute top-0 right-0 block h-2.5 w-2.5 rounded-full bg-red-500 ring-2 ring-white"></span>
+            </i>
+            <img src="https://placehold.co/30x30/cccccc/333333?text=MA" alt="User Avatar"
+                class="w-8 h-8 rounded-full border border-gray-400" />
+            <i class="fas fa-chevron-down text-sm cursor-pointer hover:text-gray-600 text-header-text-color"></i>
+        </div>
+    </header>
+
+    <aside id="right-sidebar"
+        class="shadow-lg flex-shrink-0 transition-all duration-300 ease-in-out fixed top-16 right-0 z-30 sidebar-closed">
+        <div id="right-sidebar-toggle"
+            class="w-8 h-14 flex flex-col items-center justify-center bg-sidebar-toggle-bg text-white cursor-pointer rounded-r-xl absolute right-0">
+            <i class="fas fa-chevron-left text-2xl" id="right-sidebar-arrow-icon"></i>
+        </div>
+
+        <div id="right-sidebar-full-content" class="p-6 h-full overflow-y-auto w-full md:w-[280px]">
+            <h3 class="text-xl font-semibold text-main-accent-text-color mb-4 pb-2 border-b border-gray-200">
+                <!-- Menu Utama -->
+            </h3>
+            <ul class="space-y-3">
+                <li>
+                    <a href="#"
+                        class="flex items-center space-x-3 text-text-standard hover:bg-light-grey-bg hover:text-main-accent-text-color p-2 rounded-lg transition-colors duration-200"><i
+                            class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="flex items-center space-x-3 text-text-standard hover:bg-light-grey-bg hover:text-main-accent-text-color p-2 rounded-lg transition-colors duration-200"><i
+                            class="fas fa-calendar-alt"></i> <span>Class Schedule</span></a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="flex items-center space-x-3 text-text-standard hover:bg-light-grey-bg hover:text-main-accent-text-color p-2 rounded-lg transition-colors duration-200 relative"><i
+                            class="fas fa-envelope"></i> <span>Instructor's Message</span>
+                        <span id="message-badge-sidebar"
+                            class="ml-auto bg-green-500 text-white text-xs px-2 py-0.5 rounded-full">1 New</span></a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="flex items-center space-x-3 text-text-standard hover:bg-light-grey-bg hover:text-main-accent-text-color p-2 rounded-lg transition-colors duration-200 relative"><i
+                            class="fas fa-comments"></i> <span>Discussion Forum</span>
+                        <span id="forum-badge-sidebar"
+                            class="ml-auto bg-yellow-500 text-gray-800 text-xs px-2 py-0.5 rounded-full">5
+                            New</span></a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="flex items-center space-x-3 text-text-standard hover:bg-light-grey-bg hover:text-main-accent-text-color p-2 rounded-lg transition-colors duration-200"><i
+                            class="fas fa-graduation-cap"></i> <span>Grades</span></a>
+                </li>
+                <!-- <li>
+                    <a href="#"
+                        class="flex items-center space-x-3 text-text-standard hover:bg-light-grey-bg hover:text-main-accent-text-color p-2 rounded-lg transition-colors duration-200"><i
+                            class="fas fa-file-alt"></i> <span>Transkrip</span></a>
+                </li> -->
+            </ul>
+
+            <div class="mt-8 pt-4 border-t border-gray-200">
+                <h4 class="text-lg font-semibold text-main-accent-text-color mb-3">
+                    Important Announcement
+                </h4>
+                <ul id="important-announcements-sidebar" class="text-sm space-y-2 text-text-standard">
+                    <li>
+                        <strong class="text-main-accent-text-color">Broken Link:</strong>
+                        The material 'Social Network Analysis - Week 3' is currently inaccessible. Our support team has
+                        received the report and is following up. The course instructor has been notified.
+                    </li>
+                    <li>
+                        <strong class="text-main-accent-text-color">New:</strong> A new Analisis Jejaring Sosial Quiz
+                        has been
+                        released – Deadline in 3 days.
+                    </li>
+                    <!-- <li>Jadwal UTS Matematika Diskret telah dirilis.</li> -->
+                </ul>
+                <a href="#" class="text-main-accent-text-color hover:underline text-sm block text-right mt-3">View All
+                    Announcements</a>
+            </div>
+            <div class="mt-8 pt-4 border-t border-gray-200" id="dashboard-settings-link-sidebar">
+                <h4 class="text-lg font-semibold text-main-accent-text-color mb-3">
+                    Dashboard Settings
+                </h4>
+                <p class="text-text-standard text-sm mb-2">
+                    Customize your dashboard display.
+                </p>
+                <button
+                    class="bg-gray-200 text-text-standard px-4 py-2 rounded-lg hover:bg-gray-300 transition-colors duration-200 w-full text-center"
+                    id="open-settings-btn-sidebar">
+                    Open Settings
+                </button>
+            </div>
+            <button id="right-sidebar-close-btn" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+    </aside>
+
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-20 hidden md:hidden"></div>
+
+    <main class="container mx-auto p-4 md:p-8 flex flex-grow gap-6">
+        <section class="main-content flex-grow" id="main-content-area">
+            <div class="mb-6">
+                <h1 class="text-3xl font-bold text-gray-800">Hi, Marco!👋</h1>
+            </div>
+
+            <div class="bg-card-bg p-6 rounded-xl shadow-lg mb-6">
+                <h2 class="text-xl font-semibold text-text-standard mb-4 pb-2 border-b border-gray-200">
+                    Latest announcements
+                </h2>
+                <ul class="text-sm space-y-2 text-text-standard">
+                    <li>
+                        <span class="text-gray-500">3 June, 21:11</span>
+                        <span class="font-medium text-main-accent-text-color">BUDI</span>
+                        Maintenance LMS (03 Juni 2029) Cancelled TBA
+                    </li>
+                    <li>
+                        <span class="text-gray-500">23 May, 14:47</span>
+                        <span class="font-medium text-main-accent-text-color">ANTON</span>
+                        Maintenance Proctoring LMS dan MOOC 22 Mei 2025
+                    </li>
+                    <li>
+                        <span class="text-gray-500">3 May, 14:30</span>
+                        <span class="font-medium text-main-accent-text-color">INDAH</span>
+                        Maintenance LMS (23 Maret 2025)
+                    </li>
+                    <li>
+                        <a href="#" class="text-main-accent-text-color hover:underline mt-2 block">Older topics...</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-red-50 p-6 rounded-xl shadow-lg mb-6" id="section-warnings-solutions">
+                <h2 class="text-xl font-semibold text-red-700 flex items-center mb-4">
+                    <i class="fas fa-exclamation-triangle mr-3"></i> Warning
+                </h2>
+                <ul id="warnings-list" class="space-y-3 text-red-800 text-sm">
+                    <li>
+                        <strong>Broken Link:</strong> The material 'Social Network Analysis - Week 3' is currently
+                        inaccessible. Our support team has received the report and is following up. The course
+                        instructor has been notified
+                    </li>
+                    <li>
+                        <strong>New:</strong> A new Analisis Jejaring Sosial Quiz has been released – Deadline in 3
+                        days.
+                    </li>
+                </ul>
+                <a href="#" class="text-red-600 hover:underline mt-4 block text-right">View All</a>
+            </div>
+
+            <div
+                class="info-banner bg-info-banner-bg p-4 rounded-xl shadow-md mb-6 flex items-center space-x-3 text-info-banner-text-color">
+                <i class="fas fa-info-circle text-2xl"></i>
+                <span class="font-medium"><strong>Important:</strong> Your quiz and assignment answers will be saved
+                    automatically to prevent loss of progress.</span>
+            </div>
+
+            <div class="bg-card-bg p-6 rounded-xl shadow-lg mb-6" id="section-priority-tasks">
+                <h2 class="text-xl font-semibold text-text-standard mb-4 pb-2 border-b border-gray-200">
+                    My Todo List
+                </h2>
+                <button class="btn btn-primary mb-3" onclick="addTodoItem()">+ Add Item</button>
+
+                <!-- Contoh Item Todo -->
+                <div
+                    class="flex items-center justify-between p-3 border border-gray-200 rounded-lg mb-3 bg-white shadow-sm">
+                    <div class="flex items-center">
+                        <input class="form-check-input mr-3" type="checkbox" id="todo1">
+                        <label class="form-check-label text-text-standard" for="todo1">Belajar JavaScript</label>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <button class="text-blue-500 hover:text-blue-700" title="Edit">
+                            <i class="fa-solid fa-pen-to-square" style="color: #b8b8b8;"></i>
+                        </button>
+                        <button class="text-red-500 hover:text-red-700" title="Delete">
+                            <i class="fa-solid fa-trash-can" style="color: #b8b8b8;"></i>
+                        </button>
+                        <button class="text-yellow-500 hover:text-yellow-600" title="Pin">
+                            <i class="fa-solid fa-star" style="color: #ffd621;"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item kedua -->
+                <div
+                    class="flex items-center justify-between p-3 border border-gray-200 rounded-lg mb-3 bg-white shadow-sm">
+                    <div class="flex items-center">
+                        <input class="form-check-input mr-3" type="checkbox" id="todo2" checked>
+                        <label class="form-check-label text-text-standard" for="todo2">Kerjakan Quiz Analisis Jejaring
+                            Sosial</label>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <button class="text-blue-500 hover:text-blue-700" title="Edit">
+                            <i class="fa-solid fa-pen-to-square" style="color: #b8b8b8;"></i>
+                        </button>
+                        <button class="text-red-500 hover:text-red-700" title="Delete">
+                            <i class="fa-solid fa-trash-can" style="color: #b8b8b8;"></i>
+                        </button>
+                        <button class="text-yellow-500 hover:text-yellow-600" title="Pin">
+                            <i class="fa-solid fa-star" style="color: #b8b8b8;"></i>
+                        </button>
+
+                    </div>
+                </div>
+
+                <!-- Jika tidak ada tugas -->
+                <div id="no-priority-tasks"
+                    class="text-center text-text-secondary p-8 border-2 border-dashed border-gray-300 rounded-lg hidden">
+                    Tidak ada tugas/kuis dalam waktu dekat. Waktunya bersantai!
+                </div>
+            </div>
+
+
+            <div class="bg-card-bg p-6 rounded-xl shadow-lg mb-6" id="section-priority-tasks">
+                <h2 class="text-xl font-semibold text-text-standard mb-4 pb-2 border-b border-gray-200">
+                    Timeline
+                </h2>
+                <div
+                    class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 mb-6">
+                    <div class="flex items-center space-x-2 text-sm text-text-secondary">
+                        <span>Next 30 days</span> <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="flex items-center space-x-2 text-sm text-text-secondary">
+                        <span>Sort by dates</span> <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="relative flex-1 w-full md:w-auto">
+                        <input type="text" placeholder="Search by activity type or name"
+                            class="w-full pl-8 pr-3 py-1.5 border border-gray-300 rounded-md text-sm text-text-standard focus:ring-main-accent focus:border-main-accent" />
+                        <i class="fas fa-search absolute left-2 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                    </div>
+                </div>
+
+                <strong>Sunday, 3 August 2025</strong>
+
+                <div id="priority-tasks-list" class="space-y-4">
+                    <div id="task-1"
+                        class="flex flex-col md:flex-row justify-between items-start md:items-center p-4 bg-gray-50 rounded-xl shadow-sm border upcoming-task">
+                        <div class="flex-1 mb-3 md:mb-0">
+                            <h3 class="text-lg font-semibold text-text-standard">
+                                Quiz Week 3
+                            </h3>
+                            <p class="text-sm text-text-secondary">
+                                Analisis Jejaring Sosial
+                            </p>
+                            <span class="text-sm font-bold text-red-600 mt-1 block">
+                                <i class="fas fa-hourglass-half mr-2"></i>Tenggat: 3 Hari Lagi
+                            </span>
+                        </div>
+                        <button
+                            class="bg-main-accent text-white px-4 py-2 rounded-lg hover:bg-hover-accent transition-colors duration-200 shadow-md">
+                            Kerjakan Sekarang
+                        </button>
+                    </div>
+                </div>
+                <div id="no-priority-tasks"
+                    class="text-center text-text-secondary p-8 border-2 border-dashed border-gray-300 rounded-lg hidden">
+                    Tidak ada tugas/kuis dalam waktu dekat. Waktunya bersantai!
+                </div>
+            </div>
+
+            <div class="bg-card-bg p-6 rounded-xl shadow-lg mb-6" id="section-progress">
+                <h2 class="text-xl font-semibold text-text-standard mb-4 pb-2 border-b border-gray-200">
+                    Course overview
+                </h2>
+                <!-- <div
+                    class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 mb-6">
+                    <div class="flex items-center space-x-2 text-sm text-text-secondary">
+                        <span>All</span> <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="flex items-center space-x-2 text-sm text-text-secondary">
+                        <span>In progress</span> <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="flex items-center space-x-2 text-sm text-text-secondary">
+                        <span>Future</span> <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="flex items-center space-x-2 text-sm text-text-secondary">
+                        <span>Past</span> <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="flex items-center space-x-2 text-sm text-text-secondary">
+                        <span>Starred</span> <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <div class="flex items-center space-x-2 text-sm text-text-secondary">
+                        <span>Removed from view</span> <i class="fas fa-eye-slash"></i>
+                    </div>
+                    <div class="relative flex-1 w-full md:w-auto">
+                        <input type="text" placeholder="Search"
+                            class="w-full pl-8 pr-3 py-1.5 border border-gray-300 rounded-md text-sm text-text-standard focus:ring-main-accent focus:border-main-accent" />
+                        <i class="fas fa-search absolute left-2 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                    </div>
+                    <i class="fas fa-th-large text-gray-500 cursor-pointer"></i>
+                    <i class="fas fa-list text-gray-500 cursor-pointer"></i>
+                </div>
+                <a href="#" class="text-main-accent-text-color hover:underline text-sm block text-right mb-4">See all my
+                    courses in progress ></a> -->
+
+                <!-- <div
+            class="bg-card-bg p-6 rounded-xl border border-overall-progress-border mb-8 text-center shadow-inner"
+            id="overall-progress-summary"
+          >
+            <h3 class="text-xl font-semibold text-main-accent-text-color mb-4">
+              Ringkasan Progres Keseluruhan
+            </h3>
+            <div class="w-3/4 md:w-1/2 mx-auto mb-4">
+              <canvas
+                id="overallProgressChart"
+                width="200"
+                height="200"
+              ></canvas>
+            </div> -->
+
+
+                <div class="card draggable">
+                    <div class="pt-3 pb-2">
+                        <h1 class="text-center text-bold title-md">Performance Insight</h1>
+                    </div>
+                    <div class="card-body p-3">
+                        <div class="row justify-content-between">
+                            <div class="w-auto">
+                                <div
+                                    style="display: flex; gap: 20px; align-items: center; font-family: sans-serif; font-size: 14px;">
+                                    <span style="display: flex; align-items: center;">
+                                        <span
+                                            style="width: 10px; height: 10px; background-color: #4CC3FF; display: inline-block; border-radius: 2px; margin-right: 5px;"></span>
+                                        Analisis Jejaring Sosial
+                                    </span>
+                                    <span style="display: flex; align-items: center;">
+                                        <span
+                                            style="width: 10px; height: 10px; background-color: #F57C00; display: inline-block; border-radius: 2px; margin-right: 5px;"></span>
+                                        Desain Interaksi
+                                    </span>
+                                    <span style="display: flex; align-items: center;">
+
+                                        <span
+                                            style="width: 10px; height: 10px; background-color: #8BC34A; display: inline-block; border-radius: 2px; margin-right: 5px;"></span>
+                                        Sistem Keamanan Cerdas
+                                    </span>
+                                    <span style="display: flex; align-items: center;">
+                                        <span
+                                            style="width: 10px; height: 10px; background-color: #F06292; display: inline-block; border-radius: 2px; margin-right: 5px;"></span>
+                                        Visi Komputer
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="w-auto">
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button"
+                                        id="chartDropdownButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Line Chart
+                                    </button>
+
+
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item chart-option" href="#" data-chart="Line Chart"
+                                                id="chart-line-btn">Line
+                                                Chart</a></li>
+                                        <li><a class="dropdown-item chart-option" href="#" data-chart="Pie Chart"
+                                                id="chart-pie-btn">Pie
+                                                Chart</a></li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- LINE CHART -->
+                        <div class="chart" id="chart-line-id">
+                            <div class="chartjs-size-monitor">
+                                <div class="chartjs-size-monitor-expand">
+                                    <div class=""></div>
+                                </div>
+                                <div class="chartjs-size-monitor-shrink">
+                                    <div class=""></div>
+                                </div>
+                            </div>
+                            <canvas id="chart-line" class="chart-canvas chartjs-render-monitor chart-line" height="600"
+                                width="1088" style="display: block; height: 300px; width: 544px;"></canvas>
+                        </div>
+
+                        <!-- PIE CHART -->
+                        <div class="chart chart-xs" id="chart-pie-id">
+                            <div class="chartjs-size-monitor">
+                                <div class="chartjs-size-monitor-expand">
+                                    <div class=""></div>
+                                </div>
+                                <div class="chartjs-size-monitor-shrink">
+                                    <div class=""></div>
+                                </div>
+                            </div>
+                            <canvas id="chartjs-dashboard-pie" width="856" height="400"
+                                style="display: block; height: 200px; width: 428px;"
+                                class="chart-pie chartjs-render-monitor"></canvas>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <p class="text-lg text-text-standard">
+                    Assignments Completed: <strong id="total-tasks-completed">8</strong> out of
+                    <strong id="total-tasks-all">12</strong>
+                </p>
+                <p class="text-lg text-text-standard">
+                    Materials Accessed:
+                    <strong id="total-materials-accessed">28</strong> out of
+                    <strong id="total-materials-all">41</strong>
+                </p>
+                <!-- <p class="text-sm text-text-secondary mt-3">
+                    Target Lulus:
+                    <span class="font-semibold text-main-accent-text-color">3.5 Tahun</span>
+                </p> -->
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8" id="learning-progress-overview">
+                <div class="p-4 rounded-lg border bg-card-bg" id="course-jejaring-sosial">
+                    <h3 class="text-lg font-semibold text-jejaring-text mb-2">
+                        Analisis Jejaring Sosial
+                    </h3>
+                    <p class="text-sm text-jejaring-text-secondary mb-2">ADIT</p>
+                    <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="100"
+                        aria-valuemin="0" aria-valuemax="80">
+                        <div class="progress-bar" style="width: 80%"></div>
+                    </div>
+                    <p class="text-sm text-jejaring-text mb-4">
+                        Material Completed: 8/10 | Assignment Completed: 4/5
+                    </p>
+                    <button
+                        class="w-full bg-view-course-button text-white px-4 py-2 rounded-lg hover:bg-hover-view-course transition-colors duration-200 shadow-md">
+                        View Course
+                    </button>
+                </div>
+
+                <div class="p-4 rounded-lg border bg-card-bg" id="course-pembelajaran-mesin">
+                    <h3 class="text-lg font-semibold text-mesin-text mb-2">
+                        Desain Interaksi
+                    </h3>
+                    <p class="text-sm text-mesin-text-secondary mb-2">RANGGA</p>
+                    <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0"
+                        aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar bg-success" style="width: 100%"></div>
+                    </div>
+                    <p class="text-sm text-mesin-text mb-4">
+                        Material Completed: 12/12 | Assignment Completed: 3/3
+                    </p>
+                    <button
+                        class="w-full bg-view-course-button text-white px-4 py-2 rounded-lg hover:bg-hover-view-course transition-colors duration-200 shadow-md">
+                        View Course
+                    </button>
+                </div>
+
+                <div class="p-4 rounded-lg border bg-card-bg" id="course-pemrograman-web">
+                    <h3 class="text-lg font-semibold text-pemweb-text mb-2 flex items-center">
+                        <!-- <i class="fas fa-code mr-2"></i>  -->
+                        Sistem Keamanan Cerdas
+                    </h3>
+                    <p class="text-sm text-pemweb-text-secondary mb-2">
+                        FIKRAM
+                    </p>
+                    <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0"
+                        aria-valuemin="0" aria-valuemax="50">
+                        <div class="progress-bar bg-warning" style="width: 50%"></div>
+                    </div>
+                    <p class="text-sm text-pemweb-text mb-4">
+                        Material Completed: 7/12 | Assignment Completed: 1/3
+                    </p>
+                    <button
+                        class="w-full bg-view-course-button text-white px-4 py-2 rounded-lg hover:bg-hover-view-course transition-colors duration-200 shadow-md">
+                        View Course
+                    </button>
+                </div>
+                <div class="p-4 rounded-lg border bg-card-bg" id="course-math">
+                    <h3 class="text-lg font-semibold text-text-standard mb-2 flex items-center">
+                        <!-- <i class="fas fa-calculator mr-2"></i>  -->
+                        Visi Komputer
+                    </h3>
+                    <p class="text-sm text-text-secondary mb-2">DR. YUDHIS</p>
+                    <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0"
+                        aria-valuemin="0" aria-valuemax="15">
+                        <div class="progress-bar bg-danger" style="width: 15%"></div>
+                    </div>
+                    <p class="text-sm text-text-standard mb-4">
+                        Material Completed: 4/7 | Assignment Completed: 0/1
+                    </p>
+                    <button
+                        class="w-full bg-view-course-button text-white px-4 py-2 rounded-lg hover:bg-hover-view-course transition-colors duration-200 shadow-md">
+                        View Course
+                    </button>
+                </div>
+            </div>
+
+            <div class="achievements-section">
+                <h3 class="text-xl font-semibold text-main-accent-text-color mb-4">
+                    My Achievements
+                </h3>
+                <div class="flex flex-wrap gap-4 justify-center" id="badges-container">
+                    <div class="badge-item bg-yellow-50 p-4 rounded-xl border border-yellow-200 flex flex-col items-center shadow-sm unlocked"
+                        id="badge-first-quiz">
+                        <i class="fas fa-trophy gold"></i>
+                        <span class="font-semibold text-sm mt-2">First Quiz</span>
+                    </div>
+                    <div class="badge-item bg-light-grey-bg p-4 rounded-xl border border-gray-200 flex flex-col items-center shadow-sm unlocked"
+                        id="badge-consistent">
+                        <i class="fas fa-calendar-check silver"></i>
+                        <span class="font-semibold text-sm mt-2">Consistent Learner</span>
+                    </div>
+                    <div class="badge-item bg-green-50 p-4 rounded-xl border border-green-200 flex flex-col items-center shadow-sm unlocked"
+                        id="badge-master">
+                        <i class="fas fa-crown gold"></i>
+                        <span class="font-semibold text-sm mt-2">Mastered the Material</span>
+                    </div>
+                    <div class="badge-item bg-purple-50 p-4 rounded-xl border border-purple-200 flex flex-col items-center shadow-sm unlocked"
+                        id="badge-fast-learner">
+                        <i class="fas fa-running gold"></i>
+                        <span class="font-semibold text-sm mt-2">Fast Learner</span>
+                    </div>
+                </div>
+                <p class="text-center text-sm text-text-secondary mt-4 mb-4">
+                    View all achievements on your profile page.
+                </p>
+            </div>
+            </div>
+
+            <div class="bg-card-bg p-6 rounded-xl shadow-lg mb-6 text-center" id="gamification-section">
+                <h1 class="text-xl font-semibold text-main-accent-text-color mb-4">
+                    <!-- Achievements -->
+                </h1>
+                <div
+                    class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8 mb-6">
+                    <div class="flex items-center space-x-3 text-lg font-semibold text-text-standard">
+                        <i class="fas fa-trophy text-yellow-500 text-3xl"></i>
+                        <span>Your Level:
+                            <strong class="text-main-accent-text-color" id="user-level">5</strong></span>
+                    </div>
+                    <div class="flex items-center space-x-3 text-lg font-semibold text-text-standard">
+                        <i class="fas fa-coins text-yellow-600 text-3xl"></i>
+                        <span>Your Points:
+                            <strong class="text-main-accent-text-color" id="user-points">2500</strong></span>
+                    </div>
+                    <div class="virtual-character">
+                        <div class="tenor-gif-embed align-self-center" data-postid="6379521552912307511"
+                            data-share-method="host" data-aspect-ratio="1" data-width="200%"><a
+                                href="https://tenor.com/view/win-best-gold-winner-penguin-gif-6379521552912307511">Win
+                                Best GIF</a>from <a href="https://tenor.com/search/win-gifs">Win GIFs</a></div>
+                        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+                        <p class="text-md text-text-secondary  text-center w-100">
+                            Congratulations!
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mb-6 text-left" id="leaderboard-section">
+                    <h3 class="text-xl font-bold text-main-accent-text-color mb-4 text-center">
+                        Semester Leaderboard
+                    </h3>
+                    <ol class="list-decimal list-inside space-y-2 text-text-standard">
+                        <li class="p-2 bg-main-accent-light-bg rounded-lg flex justify-between items-center shadow-sm">
+                            <span class="font-semibold text-main-accent-text-color" id="leader-1">1. FARHAN</span>
+                            <span class="text-main-accent-text-color font-bold" id="score-1">2500 Points</span>
+                        </li>
+                        <li class="p-2 bg-gray-100 rounded-lg flex justify-between items-center">
+                            <span class="font-semibold" id="leader-2">2. RAIHAN</span>
+                            <span class="text-text-standard" id="score-2">2200 Points</span>
+                        </li>
+                        <li class="p-2 flex justify-between items-center">
+                            <span>3. ALFIN</span> <span>2000 Points</span>
+                        </li>
+                        <li class="p-2 flex justify-between items-center">
+                            <span>4. DARREL</span> <span>1800 Points</span>
+                        </li>
+                        <li class="p-2 flex justify-between items-center">
+                            <span>5. ILHAM</span> <span>1700 Points</span>
+                        </li>
+                    </ol>
+                </div>
+
+                <button id="toggle-gamification" class="text-main-accent-text-color hover:underline mt-4">
+                    Disable Achievements
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="bg-white p-6 rounded-xl shadow-lg" id="message-dosen-section">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                        Lecturer's Message
+                        <span id="new-messages-count"
+                            class="bg-green-500 text-white text-xs px-2 py-0.5 rounded-full ml-3">1 New
+                            Notification</span>
+                    </h2>
+
+                    <div class="mb-4">
+                        <div class="relative">
+                            <input type="text" placeholder="Search messages"
+                                class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-gray-400">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex space-x-2 overflow-x-auto mb-4 pb-2">
+                        <button
+                            class="bg-gray-200 text-gray-700 px-4 py-2 rounded-full hover:bg-gray-300 transition-colors duration-200 whitespace-nowrap">ADIT</button>
+                        <button
+                            class="bg-gray-200 text-gray-700 px-4 py-2 rounded-full hover:bg-gray-300 transition-colors duration-200 whitespace-nowrap">RANGGA</button>
+                        <button
+                            class="bg-gray-200 text-gray-700 px-4 py-2 rounded-full hover:bg-gray-300 transition-colors duration-200 whitespace-nowrap">FIKRAM</button>
+                        <button class="bg-green-600 text-white px-4 py-2 rounded-full whitespace-nowrap">Dr.
+                            YUDHIS</button>
+                    </div>
+
+                    <div class="space-y-3" id="dosen-messages-preview">
+                        <p class="text-gray-700">
+                            <strong>Rizky:</strong> Selamat siang Pak, saya masih belum mengerti mengenai konsep
+                            CNN, apakah Bapak ada waktu luang?
+                        </p>
+                        <p class="text-gray-700">
+                            <strong>Dr. YUDHIS:</strong> Halo Rizky, konsep CNN
+                            yang mana? Saya online sekarang.
+                        </p>
+                        <p class="text-gray-700">
+                            <strong>Rizky:</strong> Tentang Arsitekturnya, Pak. Saya
+                            masih bingung penerapannya.
+                        </p>
+                        <p class="text-gray-700">
+                            <strong>Dr. YUDHIS:</strong> Baik, kita bisa konsultasi
+                            singkat via Teams, mau sekarang?
+                        </p>
+                    </div>
+
+                    <p class="text-sm text-gray-600 mt-3 flex items-center justify-end">
+                        <span id="dosen-statistika-status" class="w-3 h-3 rounded-full mr-2 bg-green-500"></span>Dr.ABC:
+                        <span id="dosen-statistika-text">Online</span>
+                    </p>
+                    <button
+                        class="mt-5 bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300 transition-colors duration-200 w-full text-center">
+                        View all messages
+                    </button>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-lg flex flex-col">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                        Active Discussion Forum
+                        <span id="active-forums-count"
+                            class="bg-yellow-100 text-yellow-700 text-xs px-2 py-0.5 rounded-full ml-3">5 New
+                            Notifications</span>
+                    </h2>
+
+                    <div class="mb-4">
+                        <div class="relative">
+                            <input type="text" placeholder="Search topics"
+                                class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-gray-400">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex space-x-2 overflow-x-auto mb-4 pb-2">
+                        <button
+                            class="bg-gray-200 text-gray-700 px-4 py-2 rounded-full hover:bg-gray-300 transition-colors duration-200 whitespace-nowrap">Analisis
+                            Jejaring Sosial</button>
+                        <button
+                            class="bg-gray-200 text-gray-700 px-4 py-2 rounded-full hover:bg-gray-300 transition-colors duration-200 whitespace-nowrap">Sistem
+                            Keamanan Cerdas</button>
+                        <button class="bg-yellow-100 text-black px-4 py-2 rounded-full whitespace-nowrap">Desain
+                            Interaksi</button> <button
+                            class="bg-gray-200 text-gray-700 px-4 py-2 rounded-full hover:bg-gray-300 transition-colors duration-200 whitespace-nowrap">Visi
+                            Komputer</button>
+                    </div>
+
+                    <div class="space-y-3 flex-grow">
+                        <button
+                            class="w-full text-left bg-gray-100 hover:bg-gray-200 p-3 rounded-lg border border-gray-200 transition-colors duration-200">
+                            <p class="text-gray-700 font-semibold">Topic: Diskusi Konsep Basis Data</p>
+                        </button>
+                        <button
+                            class="w-full text-left bg-gray-100 hover:bg-gray-200 p-3 rounded-lg border border-gray-200 transition-colors duration-200">
+                            <p class="text-gray-700 font-semibold">Topic: User-Centered Design (UCD) Process</p>
+                        </button>
+                        <button
+                            class="w-full text-left bg-gray-100 hover:bg-gray-200 p-3 rounded-lg border border-gray-200 transition-colors duration-200">
+                            <p class="text-gray-700 font-semibold">Topic: User Research - Understanding Your Audience
+                            </p>
+                        </button>
+                        <!-- <button
+                            class="w-full text-left bg-gray-100 hover:bg-gray-200 p-3 rounded-lg border border-gray-200 transition-colors duration-200">
+                            <p class="text-gray-700 font-semibold">Topic: User Research - Synthesis and Analysis</p>
+                        </button> -->
+                        <!-- <p class="text-gray-600 text-sm">
+                            <span class="font-semibold">Rizky:</span> "Saya masih bingung dengan konsep normalisasi
+                            basis data. Adakah yang bisa memberikan contoh sederhana?"
+                        </p>
+                        <p class="text-gray-600 text-sm">
+                            <span class="font-semibold">Budi:</span> "Normalisasi bertujuan mengurangi redundansi data.
+                            Contohnya, memisahkan tabel pelanggan dan pesanan."
+                        </p>
+                        <p class="text-gray-600 text-sm">
+                            <span class="font-semibold">Anda:</span> "Baik, terima kasih. Jadi, intinya adalah mengatur
+                            struktur data agar lebih efisien dan terhindar dari anomali?"
+                        </p> -->
+                        <p class="text-sm text-gray-500 mt-2">
+                            2 new replies since last visit.
+                        </p>
+                    </div>
+
+                    <button
+                        class="mt-auto bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300 transition-colors duration-200 w-full text-center">
+                        View all forum
+                    </button>
+                </div>
+
+                <div class="bg-card-bg p-6 rounded-xl shadow-lg mb-6" id="section-materials">
+                    <h2 class="text-xl font-semibold text-main-accent-text-color mb-4">
+                        Latest Material
+                    </h2>
+                    <ul id="latest-materials-list" class="space-y-3">
+                        <li class="flex items-center p-3 border-b border-gray-200 last:border-b-0">
+                            <i class="fas fa-file-pdf text-red-500 text-lg mr-3"></i>
+                            <a href="#" class="flex-1 text-main-accent-text-color hover:underline font-medium">Material
+                                Week
+                                5:
+                                Sistem Keamanan Cerdas</a>
+                            <span class="text-sm text-text-secondary ml-auto">Uploaded: 25 July</span>
+                            <span
+                                class="bg-main-accent-light-bg text-main-accent-text-color text-xs px-2 py-1 rounded-full ml-2">PDF</span>
+                        </li>
+                        <li class="flex items-center p-3 border-b border-gray-200 last:border-b-0">
+                            <i class="fas fa-video text-purple-600 text-lg mr-3"></i>
+                            <a href="#" class="flex-1 text-main-accent-text-color hover:underline font-medium">Lecture
+                                Video:
+                                Week 5 Desain Interaksi</a>
+                            <span class="text-sm text-text-secondary ml-auto">Uploaded: 24 July</span>
+                            <span class="bg-purple-100 text-purple-700 text-xs px-2 py-1 rounded-full ml-2">Video</span>
+                        </li>
+                        <li class="flex items-center p-3 border-b border-gray-200 last:border-b-0">
+                            <i class="fas fa-exclamation-triangle text-red-500 text-lg mr-3"></i>
+                            <a href="#" class="flex-1 text-red-600 font-medium broken-link">Material – Week 3
+                                Analisis Jejaring Sosial</a>
+                            <span class="text-sm text-text-secondary ml-auto">Uploaded: 20 July</span>
+                            <span class="bg-red-100 text-red-700 text-xs px-2 py-1 rounded-full ml-2">Error</span>
+                        </li>
+                        <li class="flex items-center p-3 border-b border-gray-200 last:border-b-0">
+                            <i class="fas fa-question-circle text-main-accent-text-color text-lg mr-3"></i>
+                            <a href="#" class="flex-1 text-main-accent-text-color hover:underline font-medium">Week 5
+                                Quiz
+                                Desain
+                                Interaksi</a>
+                            <div class="flex items-center space-x-2 ml-auto">
+                                <span class="text-sm text-text-secondary">Uploaded: 23 July</span>
+                                <span
+                                    class="bg-main-accent-light-bg text-main-accent-text-color text-xs px-2 py-1 rounded-full">Quiz</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-card-bg p-6 rounded-xl shadow-lg text-center" id="section-simple-guide">
+                    <h2 class="text-xl font-semibold text-main-accent-text-color mb-4">
+                        Student Quick Guide
+                    </h2>
+                    <p class="text-text-standard mb-5">
+                        Find the complete guide on course synchronization, enrollment process, and other important
+                        information on our help page.
+                    </p>
+                    <a href="#"
+                        class="bg-main-accent text-white px-6 py-3 rounded-full hover:bg-hover-accent transition-colors duration-200 inline-block shadow-md">
+                        Access Full Guide</a>
+                </div>
+        </section>
+    </main>
+
+    <footer class="bg-footer-bg text-white p-6 md:p-8 mt-8">
+        <div
+            class="container mx-auto flex flex-col md:flex-row justify-between items-start text-justify md:text-left gap-6">
+            <div class="flex-1 mb-4 md:mb-0 max-w-[200px] md:max-w-none">
+                <img src="https://lms.telkomuniversity.ac.id/pluginfile.php/1/theme_remui/logo/1746441839/logo-celoe-small%20%282%29%20%281%29%20%288%29%20%281%29.png"
+                    alt="celoe Logo" class="h-10 mb-2 mx-auto md:mx-0" />
+                <p class="text-gray-300 text-sm">
+                    Center of E-learning and Open Education
+                </p>
+            </div>
+            <div class="flex-1 mb-4 md:mb-0 max-w-[250px] md:max-w-none">
+                <h4 class="font-semibold text-lg mb-2 text-white">Address</h4>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Gedung Panahan Pasca Sarjana Lantai 1, Jl. Telekomunikasi Terusan
+                    Buah Batu, Bandung, Jawa Barat 40257
+                </p>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    E-Mail: celoe@telkomuniversity.ac.id
+                </p>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Phone: +62 22 7564108
+                </p>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Student Hotline: +62 812-2200-1819
+                </p>
+            </div>
+            <div class="flex-1 mb-4 md:mb-0 max-w-[150px] md:max-w-none">
+                <h4 class="font-semibold text-lg mb-2 text-white">Related Links</h4>
+                <ul class="text-gray-300 text-sm space-y-1">
+                    <li><a href="#" class="hover:underline">Link 1</a></li>
+                    <li><a href="#" class="hover:underline">Link 2</a></li>
+                    <li><a href="#" class="hover:underline">Link 3</a></li>
+                </ul>
+            </div>
+            <div class="flex-1 mb-4 md:mb-0 max-w-[150px] md:max-w-none">
+                <h4 class="font-semibold text-lg mb-2 text-white">Social Media</h4>
+                <div class="flex justify-center md:justify-start space-x-4">
+                    <a href="#" class="text-white hover:text-gray-300 text-xl"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white hover:text-gray-300 text-xl"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white hover:text-gray-300 text-xl"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="mt-8 pt-4 border-t border-gray-700 text-sm text-gray-400 text-center md:text-left">
+            <p>Privacy Policy | Terms & Conditions</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        document.querySelectorAll('.chart-option').forEach(item => {
+            item.addEventListener('click', function (e) {
+                e.preventDefault();
+                const selectedChart = this.getAttribute('data-chart');
+                document.getElementById('chartDropdownButton').textContent = selectedChart;
+            });
+        });
+    </script>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const lineChartBtn = document.getElementById("chart-line-btn");
+            const pieChartBtn = document.getElementById("chart-pie-btn");
+
+
+            const lineChart = document.getElementById("chart-line-id");
+            const pieChart = document.getElementById("chart-pie-id");
+
+            // Sembunyikan semua chart terlebih dahulu
+            function hideAllCharts() {
+                lineChart.style.display = "none";
+                pieChart.style.display = "none";
+            }
+
+            // Tampilkan line chart
+            lineChartBtn.addEventListener("click", function () {
+                hideAllCharts();
+                lineChart.style.display = "block";
+            });
+
+            // Tampilkan pie chart
+            pieChartBtn.addEventListener("click", function () {
+                hideAllCharts();
+                pieChart.style.display = "block";
+            });
+
+            // Inisialisasi: tampilkan hanya chart pertama
+            hideAllCharts();
+            lineChart.style.display = "block";
+        });
+    </script>
+
+    <script>
+        if (document.querySelector(".chart-line")) {
+            var chartsLine = document.querySelectorAll(".chart-line");
+
+            chartsLine.forEach(function (chart) {
+                var ctx = chart.getContext("2d");
+
+                var gradientStroke1 = ctx.createLinearGradient(0, 230, 0, 50);
+
+                gradientStroke1.addColorStop(1, "rgba(203,12,159,0.2)");
+                gradientStroke1.addColorStop(0.2, "rgba(72,72,176,0.0)");
+                gradientStroke1.addColorStop(0, "rgba(203,12,159,0)"); //purple colors
+
+                var gradientStroke2 = ctx.createLinearGradient(0, 230, 0, 50);
+
+                gradientStroke2.addColorStop(1, "rgba(20,23,39,0.2)");
+                gradientStroke2.addColorStop(0.2, "rgba(72,72,176,0.0)");
+                gradientStroke2.addColorStop(0, "rgba(20,23,39,0)"); //purple colors
+
+                if (!chart.getAttribute('data-chart-initialized')) {
+                    new Chart(ctx, {
+                        type: "line",
+                        data: {
+                            labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                            datasets: [{
+                                label: "Analisis Jejaringan Sosial", // Tren: Peningkatan progres yang konsisten
+                                tension: 0.4,
+                                borderWidth: 0,
+                                pointRadius: 0,
+                                borderColor: "#4DD2F9",
+                                borderWidth: 3,
+                                backgroundColor: gradientStroke1,
+                                fill: false,
+                                data: [60, 35, 50, 65, 75, 85, 90, 95, 100], // Nilai diskalakan ke bawah
+                                maxBarThickness: 6, // Ini untuk bar chart, tidak berpengaruh banyak pada line chart
+                            },
+                            {
+                                label: "Design Interaksi", // Tren: Progres berfluktuasi dengan peningkatan bertahap
+                                tension: 0.4,
+                                borderWidth: 0,
+                                pointRadius: 0,
+                                borderColor: "#F5812E",
+                                borderWidth: 3,
+                                backgroundColor: gradientStroke2,
+                                fill: false,
+                                data: [50, 25, 50, 30, 25, 35, 30, 40, 45], // Nilai diskalakan ke bawah
+                                maxBarThickness: 6,
+                            },
+                            {
+                                label: "Sistem Keamanan Cerdas", // Tren: Peningkatan cepat di awal, lalu stabil di level tinggi
+                                tension: 0.4,
+                                borderWidth: 0,
+                                pointRadius: 0,
+                                borderColor: "#82C80B",
+                                borderWidth: 3,
+                                backgroundColor: gradientStroke2,
+                                fill: false,
+                                data: [40, 40, 70, 90, 100, 100, 100, 100, 100], // Nilai diskalakan ke bawah
+                                maxBarThickness: 6,
+                            },
+                            {
+                                label: "Visi Komputer", // Tren: Peningkatan progres yang signifikan di paruh kedua
+                                tension: 0.4,
+                                borderWidth: 0,
+                                pointRadius: 0,
+                                borderColor: "#EB66A2",
+                                borderWidth: 3,
+                                backgroundColor: gradientStroke2,
+                                fill: false,
+                                data: [30, 10, 20, 35, 55, 75, 95, 100, 100], // Nilai diskalakan ke bawah
+                                maxBarThickness: 6,
+                            },
+                            ],
+                        },
+                        // Bagian 'options' tidak perlu diubah karena sudah bagus
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    display: false,
+                                },
+                            },
+                            interaction: {
+                                intersect: false,
+                                mode: "index",
+                            },
+                            scales: {
+                                y: {
+                                    grid: {
+                                        drawBorder: false,
+                                        display: true,
+                                        drawOnChartArea: true,
+                                        drawTicks: false,
+                                        borderDash: [5, 5],
+                                    },
+                                    ticks: {
+                                        display: true,
+                                        padding: 10,
+                                        color: "#b2b9bf",
+                                        font: {
+                                            size: 11,
+                                            family: "Open Sans",
+                                            style: "normal",
+                                            lineHeight: 2,
+                                        },
+                                    },
+                                },
+                                x: {
+                                    grid: {
+                                        drawBorder: false,
+                                        display: false,
+                                        drawOnChartArea: false,
+                                        drawTicks: false,
+                                        borderDash: [5, 5],
+                                    },
+                                    ticks: {
+                                        display: true,
+                                        color: "#b2b9bf",
+                                        padding: 20,
+                                        font: {
+                                            size: 11,
+                                            family: "Open Sans",
+                                            style: "normal",
+                                            lineHeight: 2,
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    });
+                    chart.setAttribute("data-chart-initialized", "true");
+                }
+            });
+        };
+    </script>
+
+    <!-- <script>
+        var chartsPie = document.querySelectorAll(".chart-pie");
+
+        chartsPie.forEach(function (chart) {
+            if (!chart.getAttribute('data-chart-initialized')) {
+                new Chart(chart, {
+                    type: "pie",
+                    data: {
+                        datasets: [{
+                            data: [4306, 3801, 1689, 2323],
+                            backgroundColor: [
+                                '#4DD2F9',  // biru (ganti window.theme.primary)
+                                '#F5812E',  // oranye (ganti window.theme.warning)
+                                '#82C80B',
+                                '#EB66A2'
+                            ],
+                            borderWidth: 5
+                        }]
+                    },
+                    options: {
+                        responsive: !window.MSInputMethodContext,
+                        maintainAspectRatio: false,
+                        legend: {
+                            display: false
+                        },
+                        cutoutPercentage: 75,
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            datalabels: {
+                                color: '#fff',
+                                formatter: (value, context) => {
+                                    const data = context.chart.data.datasets[0].data;
+                                    const total = data.reduce((acc, val) => acc + val, 0);
+                                    const percentage = ((value / total) * 100).toFixed(1);
+                                    return `${percentage}%`;
+                                },
+                                font: {
+                                    weight: 'bold',
+                                    size: 14
+                                }
+                            }
+                        },
+                    }
+                });
+                chart.setAttribute("data-chart-initialized", "true");
+            }
+        });
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+
+    <script>
+        // // Registrasi plugin datalabels
+        // Chart.register(ChartDataLabels);
+
+        // var chartsPie = document.querySelectorAll(".chart-pie");
+
+        // chartsPie.forEach(function (chart) {
+        //     if (!chart.getAttribute('data-chart-initialized')) {
+        //         new Chart(chart, {
+        //             type: "pie",
+        //             data: {
+        //                 datasets: [{
+        //                     data: [18, 16, 7, 10],
+        //                     backgroundColor: [
+        //                         '#4DD2F9',
+        //                         '#F5812E',
+        //                         '#82C80B',
+        //                         '#EB66A2'
+        //                     ],
+        //                     borderWidth: 5
+        //                 }],
+        //                 labels: ["Analisis Jejaring Sosial", "Desain Interaksi", "Sistem Keamanan Cerdas", "Visi Komputer"]
+        //             },
+        //             options: {
+        //                 responsive: true,
+        //                 maintainAspectRatio: false,
+        //                 plugins: {
+        //                     legend: {
+        //                         display: false
+        //                     },
+        //                     datalabels: {
+        //                         color: '#fff',
+        //                         formatter: (value, context) => {
+        //                             const data = context.chart.data.datasets[0].data;
+        //                             const total = data.reduce((acc, val) => acc + val, 0);
+        //                             const percentage = ((value / total) * 100).toFixed(1);
+        //                             return `${percentage}%`;
+        //                         },
+        //                         font: {
+        //                             weight: 'bold',
+        //                             size: 14
+        //                         }
+        //                     }
+        //                 }
+        //             },
+        //             plugins: [ChartDataLabels] // aktifkan plugin di chart ini
+        //         });
+
+        //         chart.setAttribute("data-chart-initialized", "true");
+        //     }
+        // });
+        // Registrasi plugin datalabels
+        Chart.register(ChartDataLabels);
+
+        var chartsPie = document.querySelectorAll(".chart-pie");
+
+        chartsPie.forEach(function (chart) {
+            if (!chart.getAttribute('data-chart-initialized')) {
+                new Chart(chart, {
+                    type: "pie",
+                    data: {
+                        datasets: [{
+                            data: [12, 15, 8, 4],
+                            backgroundColor: [
+                                '#4DD2F9',
+                                '#F5812E',
+                                '#82C80B',
+                                '#EB66A2'
+                            ],
+                            borderWidth: 5
+                        }],
+                        labels: ["Analisis Jejaring Sosial", "Desain Interaksi", "Sistem Keamanan Cerdas", "Visi Komputer"]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false
+                            }
+                            // Hapus seluruh bagian datalabels di sini
+                            // datalabels: {
+                            //     color: '#fff',
+                            //     formatter: (value, context) => {
+                            //         const data = context.chart.data.datasets[0].data;
+                            //         const total = data.reduce((acc, val) => acc + val, 0);
+                            //         const percentage = ((value / total) * 100).toFixed(1);
+                            //         return `${percentage}%`;
+                            //     },
+                            //     font: {
+                            //         weight: 'bold',
+                            //         size: 14
+                            //     }
+                            // }
+                        }
+                    },
+                    // Anda juga bisa menghapus 'ChartDataLabels' dari array plugins ini
+                    // plugins: [ChartDataLabels]
+                });
+
+                chart.setAttribute("data-chart-initialized", "true");
+            }
+        });
+    </script>
+
+
+
+</body>
+
+</html>
