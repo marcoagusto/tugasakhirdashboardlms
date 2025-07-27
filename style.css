@@ -2,50 +2,78 @@
 :root {
     /* Warna Tema dari LMS Asli */
     --color-header-bg: #FFFFFF;
-    --color-header-text-color: #616E84; /* Teks di header */
+    --color-header-text-color: #616E84;
+    /* Teks di header */
     --color-footer-bg: #000819;
-    --color-main-accent: #2F3847; /* Warna utama untuk teks heading fitur baru, tombol, border aksen */
-    --color-hover-accent: #4a5d6f; /* Hover state untuk --color-main-accent */
-    --color-view-course-button: #616E84; /* Warna tombol View Course */
-    --color-hover-view-course: #8898AA; /* Hover state untuk View Course */
-    --color-text-standard: #616E84; /* Warna teks standar */
-    --color-text-secondary: #8898AA; /* Warna teks sekunder/abu-abu */
-    --color-primary-bg: #F5F9FD; /* Warna latar belakang keseluruhan dashboard */
-    --color-card-bg: #FFFFFF; /* Warna latar belakang kartu utama (putih) */
-    --color-progress-bar-high: #37BE71; /* Warna progress bar untuk progres tinggi */
+    --color-main-accent: #2F3847;
+    /* Warna utama untuk teks heading fitur baru, tombol, border aksen */
+    --color-hover-accent: #4a5d6f;
+    /* Hover state untuk --color-main-accent */
+    --color-view-course-button: #616E84;
+    /* Warna tombol View Course */
+    --color-hover-view-course: #8898AA;
+    /* Hover state untuk View Course */
+    --color-text-standard: #616E84;
+    /* Warna teks standar */
+    --color-text-secondary: #8898AA;
+    /* Warna teks sekunder/abu-abu */
+    --color-primary-bg: #F5F9FD;
+    /* Warna latar belakang keseluruhan dashboard */
+    --color-card-bg: #FFFFFF;
+    /* Warna latar belakang kartu utama (putih) */
+    --color-progress-bar-high: #37BE71;
+    /* Warna progress bar untuk progres tinggi */
 
     /* Warna Background Kartu Kursus (dari screenshot) */
-    --bg-card-jejaring: #FFFFFF; /* Analisis Jejaring Sosial */
-    --bg-card-mesin: #FFFFFF; /* Pembelajaran Mesin */
-    --bg-card-tugasakhir: #FFFFFF; /* Tugas Akhir */
-    --bg-card-pemweb: #FFFFFF; /* Contoh warna untuk Pemrograman Web, bisa disesuaikan */
+    --bg-card-jejaring: #FFFFFF;
+    /* Analisis Jejaring Sosial */
+    --bg-card-mesin: #FFFFFF;
+    /* Pembelajaran Mesin */
+    --bg-card-tugasakhir: #FFFFFF;
+    /* Tugas Akhir */
+    --bg-card-pemweb: #FFFFFF;
+    /* Contoh warna untuk Pemrograman Web, bisa disesuaikan */
 
     /* Warna Teks untuk Kartu Kursus agar terbaca */
-    --text-jejaring: #6a002b; /* Darker text for contrast on pink */
+    --text-jejaring: #6a002b;
+    /* Darker text for contrast on pink */
     --text-jejaring-secondary: #8c003a;
-    --text-mesin: #4a5d6a; /* Darker text for contrast on grey-blue */
+    --text-mesin: #4a5d6a;
+    /* Darker text for contrast on grey-blue */
     --text-mesin-secondary: #6b7e8c;
-    --text-tugasakhir: #005f5f; /* Darker text for contrast on cyan */
+    --text-tugasakhir: #005f5f;
+    /* Darker text for contrast on cyan */
     --text-tugasakhir-secondary: #008f8f;
-    --text-pemweb: #003a5e; /* Darker text for contrast on light blue */
+    --text-pemweb: #003a5e;
+    /* Darker text for contrast on light blue */
     --text-pemweb-secondary: #005a8f;
 
     /* Warna Fitur Baru (tidak diubah dari sebelumnya) */
-    --color-warning-red: #ef4444; /* red-500 */
-    --color-info-banner-bg: #E0E7ED; /* Light grey for info banner background */
-    --color-info-banner-text-color: #2F3847; /* Darker text for info banner */
+    --color-warning-red: #ef4444;
+    /* red-500 */
+    --color-info-banner-bg: #E0E7ED;
+    /* Light grey for info banner background */
+    --color-info-banner-text-color: #2F3847;
+    /* Darker text for info banner */
     --color-badge-gold: #d4af37;
     --color-badge-silver: #c0c0c0;
     --color-badge-bronze: #cd7f32;
-    --color-highlight-orange: #f59e0b; /* Untuk highlight border */
-    --color-progress-low: #ef4444; /* Merah untuk progress rendah */
-    --color-progress-medium: #f59e0b; /* Oranye untuk progress sedang */
+    --color-highlight-orange: #f59e0b;
+    /* Untuk highlight border */
+    --color-progress-low: #ef4444;
+    /* Merah untuk progress rendah */
+    --color-progress-medium: #f59e0b;
+    /* Oranye untuk progress sedang */
 
     /* Warna tambahan untuk background elemen aksen yang tadinya biru terang */
-    --bg-light-grey-bg: #EAEAEA; /* Warna abu-abu terang untuk background elemen seperti task item */
-    --bg-main-accent-light-bg: #EBEDEF; /* Sangat terang dari main accent untuk background badge/list item */
-    --color-sidebar-toggle-bg: #A12621; /* Warna tombol toggle sidebar kanan */
-    --color-overall-progress-border: #2F3847; /* Border untuk overall progress summary */
+    --bg-light-grey-bg: #EAEAEA;
+    /* Warna abu-abu terang untuk background elemen seperti task item */
+    --bg-main-accent-light-bg: #EBEDEF;
+    /* Sangat terang dari main accent untuk background badge/list item */
+    --color-sidebar-toggle-bg: #A12621;
+    /* Warna tombol toggle sidebar kanan */
+    --color-overall-progress-border: #2F3847;
+    /* Border untuk overall progress summary */
 }
 
 body {
@@ -56,43 +84,68 @@ body {
 }
 
 /* Overriding Tailwind's default rounded for specific elements if needed */
-.rounded-full { border-radius: 9999px; }
-.rounded-xl { border-radius: 0.75rem; }
+.rounded-full {
+    border-radius: 9999px;
+}
+
+.rounded-xl {
+    border-radius: 0.75rem;
+}
 
 /* Navbar Styling */
 header {
     background-color: var(--color-header-bg);
     color: var(--color-header-text-color);
 }
-header .text-header-text-color { color: var(--color-header-text-color); }
-header .text-header-text-color:hover { color: #8898AA; } /* Lighter hover for contrast */
+
+header .text-header-text-color {
+    color: var(--color-header-text-color);
+}
+
+header .text-header-text-color:hover {
+    color: #8898AA;
+}
+
+/* Lighter hover for contrast */
 
 
 /* Main Content & Sidebar */
-.text-text-standard { color: var(--color-text-standard); }
-.text-text-secondary { color: var(--color-text-secondary); }
+.text-text-standard {
+    color: var(--color-text-standard);
+}
+
+.text-text-secondary {
+    color: var(--color-text-secondary);
+}
 
 /* Apply main accent text color to specific headings that were previously blue */
-.text-main-accent-text-color { color: var(--color-main-accent); }
+.text-main-accent-text-color {
+    color: var(--color-main-accent);
+}
 
 /* Sidebar Nav Hover State */
 /* This now applies to the links INSIDE the right sidebar */
 #right-sidebar-full-content ul li a:hover {
     background-color: var(--bg-light-grey-bg);
-    color: var(--color-main-accent); /* Teks hover menjadi warna aksen utama */
+    color: var(--color-main-accent);
+    /* Teks hover menjadi warna aksen utama */
 }
+
 /* Progress Bars (untuk course cards, bukan ringkasan keseluruhan) */
 .progress-bar-container {
     width: 100%;
-    background-color: #e5e7eb; /* gray-200 */
+    background-color: #e5e7eb;
+    /* gray-200 */
     border-radius: 9999px;
     height: 0.85rem;
     overflow: hidden;
     position: relative;
 }
+
 .progress-bar {
     height: 100%;
-    background-color: var(--color-progress-bar-high); /* Default to high progress color */
+    background-color: var(--color-progress-bar-high);
+    /* Default to high progress color */
     color: white;
     display: flex;
     align-items: center;
@@ -103,6 +156,7 @@ header .text-header-text-color:hover { color: #8898AA; } /* Lighter hover for co
     position: relative;
     z-index: 1;
 }
+
 .progress-text-overlay {
     position: absolute;
     width: 100%;
@@ -110,15 +164,25 @@ header .text-header-text-color:hover { color: #8898AA; } /* Lighter hover for co
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #4b5563; /* gray-700, always visible */
+    color: #4b5563;
+    /* gray-700, always visible */
     font-size: 0.7rem;
     font-weight: 500;
     z-index: 2;
 }
+
 /* Specific colors for different progress ranges */
-.progress-low { background-color: var(--color-progress-low); }
-.progress-medium { background-color: var(--color-progress-medium); }
-.progress-high { background-color: var(--color-progress-bar-high); }
+.progress-low {
+    background-color: var(--color-progress-low);
+}
+
+.progress-medium {
+    background-color: var(--color-progress-medium);
+}
+
+.progress-high {
+    background-color: var(--color-progress-bar-high);
+}
 
 
 /* Badge Styling */
@@ -126,14 +190,25 @@ header .text-header-text-color:hover { color: #8898AA; } /* Lighter hover for co
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
 }
-.gold { color: var(--color-badge-gold); }
-.silver { color: var(--color-badge-silver); }
-.bronze { color: var(--color-badge-bronze); }
+
+.gold {
+    color: var(--color-badge-gold);
+}
+
+.silver {
+    color: var(--color-badge-silver);
+}
+
+.bronze {
+    color: var(--color-badge-bronze);
+}
+
 .locked {
     opacity: 0.6;
     filter: grayscale(100%);
     transition: opacity 1s ease, filter 1s ease;
 }
+
 .unlocked {
     opacity: 1;
     filter: grayscale(0%);
@@ -141,59 +216,139 @@ header .text-header-text-color:hover { color: #8898AA; } /* Lighter hover for co
 }
 
 /* Card Course Backgrounds (tema background kursus dari screenshot) */
-.card-jejaring-bg-border { background-color: var(--bg-card-jejaring); border-color: var(--bg-card-jejaring); }
-.card-mesin-bg-border { background-color: var(--bg-card-mesin); border-color: var(--bg-card-mesin); }
-.card-tugasakhir-bg-border { background-color: var(--bg-card-tugasakhir); border-color: var(--bg-card-tugasakhir); }
-.card-pemweb-bg-border { background-color: var(--bg-card-pemweb); border-color: var(--bg-card-pemweb); }
+.card-jejaring-bg-border {
+    background-color: var(--bg-card-jejaring);
+    border-color: var(--bg-card-jejaring);
+}
+
+.card-mesin-bg-border {
+    background-color: var(--bg-card-mesin);
+    border-color: var(--bg-card-mesin);
+}
+
+.card-tugasakhir-bg-border {
+    background-color: var(--bg-card-tugasakhir);
+    border-color: var(--bg-card-tugasakhir);
+}
+
+.card-pemweb-bg-border {
+    background-color: var(--bg-card-pemweb);
+    border-color: var(--bg-card-pemweb);
+}
 
 /* Warna Teks untuk Kartu Kursus agar terbaca dengan latar belakang tema */
-.card-jejaring-bg-border h3, .card-jejaring-bg-border p { color: var(--text-jejaring); }
-.card-jejaring-bg-border p.text-sm.text-jejaring-text-secondary { color: var(--text-jejaring-secondary); }
-.card-mesin-bg-border h3, .card-mesin-bg-border p { color: var(--text-mesin); }
-.card-mesin-bg-border p.text-sm.text-mesin-text-secondary { color: var(--text-mesin-secondary); }
-.card-tugasakhir-bg-border h3, .card-tugasakhir-bg-border p { color: var(--text-tugasakhir); }
-.card-tugasakhir-bg-border p.text-sm.text-tugasakhir-text-secondary { color: var(--text-tugasakhir-secondary); }
-.card-pemweb-bg-border h3, .card-pemweb-bg-border p { color: var(--text-pemweb); }
-.card-pemweb-bg-border p.text-sm.text-pemweb-text-secondary { color: var(--text-pemweb-secondary); }
+.card-jejaring-bg-border h3,
+.card-jejaring-bg-border p {
+    color: var(--text-jejaring);
+}
+
+.card-jejaring-bg-border p.text-sm.text-jejaring-text-secondary {
+    color: var(--text-jejaring-secondary);
+}
+
+.card-mesin-bg-border h3,
+.card-mesin-bg-border p {
+    color: var(--text-mesin);
+}
+
+.card-mesin-bg-border p.text-sm.text-mesin-text-secondary {
+    color: var(--text-mesin-secondary);
+}
+
+.card-tugasakhir-bg-border h3,
+.card-tugasakhir-bg-border p {
+    color: var(--text-tugasakhir);
+}
+
+.card-tugasakhir-bg-border p.text-sm.text-tugasakhir-text-secondary {
+    color: var(--text-tugasakhir-secondary);
+}
+
+.card-pemweb-bg-border h3,
+.card-pemweb-bg-border p {
+    color: var(--text-pemweb);
+}
+
+.card-pemweb-bg-border p.text-sm.text-pemweb-text-secondary {
+    color: var(--text-pemweb-secondary);
+}
 
 
 /* Buttons */
-.bg-main-accent { background-color: var(--color-main-accent); }
-.bg-main-accent:hover { background-color: var(--color-hover-accent); }
-.bg-view-course-button { background-color: var(--color-view-course-button); }
-.bg-view-course-button:hover { background-color: var(--color-hover-view-course); }
+.bg-main-accent {
+    background-color: var(--color-main-accent);
+}
+
+.bg-main-accent:hover {
+    background-color: var(--color-hover-accent);
+}
+
+.bg-view-course-button {
+    background-color: var(--color-view-course-button);
+}
+
+.bg-view-course-button:hover {
+    background-color: var(--color-hover-view-course);
+}
 
 
 /* Status tasks (progress bar colors not directly on border) */
-.upcoming-task { border-left-color: var(--color-main-accent); } /* Border kiri sesuai warna aksen utama */
-.overdue-task { border-left-color: var(--color-warning-red); } /* Merah untuk terlewat */
-.today-task { border-left-color: var(--color-highlight-orange); } /* Oranye untuk hari ini */
+.upcoming-task {
+    border-left-color: var(--color-main-accent);
+}
+
+/* Border kiri sesuai warna aksen utama */
+.overdue-task {
+    border-left-color: var(--color-warning-red);
+}
+
+/* Merah untuk terlewat */
+.today-task {
+    border-left-color: var(--color-highlight-orange);
+}
+
+/* Oranye untuk hari ini */
 
 /* Info Banner */
 .info-banner {
     background-color: var(--color-info-banner-bg);
     color: var(--color-info-banner-text-color);
 }
+
 .info-banner i {
-    color: var(--color-info-banner-text-color); /* Pastikan ikon juga sesuai */
+    color: var(--color-info-banner-text-color);
+    /* Pastikan ikon juga sesuai */
 }
 
 /* Footer Styling */
 footer {
     background-color: var(--color-footer-bg);
 }
+
 /* Text for links and strong tags within footer */
-footer a, footer strong {
-    color: #FFFFFF; /* Ensure they are white/light on dark footer */
+footer a,
+footer strong {
+    color: #FFFFFF;
+    /* Ensure they are white/light on dark footer */
 }
+
 footer .text-gray-300 {
-    color: #CCCCCC; /* Lighter gray for general text */
+    color: #CCCCCC;
+    /* Lighter gray for general text */
 }
 
 /* Specific elements background/text color adjustments */
-.bg-card-bg { background-color: var(--color-card-bg); }
-.bg-main-accent-light-bg { background-color: var(--bg-main-accent-light-bg); }
-.border-overall-progress-border { border-color: var(--color-main-accent); }
+.bg-card-bg {
+    background-color: var(--color-card-bg);
+}
+
+.bg-main-accent-light-bg {
+    background-color: var(--bg-main-accent-light-bg);
+}
+
+.border-overall-progress-border {
+    border-color: var(--color-main-accent);
+}
 
 
 /* --- Right Sidebar Specific Styles --- */
@@ -205,74 +360,106 @@ footer .text-gray-300 {
     right: 0;
     bottom: 0;
     z-index: 30;
-    box-shadow: -4px 0 10px rgba(0,0,0,0.2);
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: row;
     height: 3.5rem;
     background-color: transparent;
     overflow: hidden;
-    border-radius: 0.75rem 0 0 0.75rem; /* SAMAKAN radius dengan tombol toggle */
-    transition: width 0.3s ease-in-out, height 0.3s ease-in-out, border-radius 0.1s ease-in-out; /* TAMBAHKAN transisi untuk radius */
+    border-radius: 0.75rem 0 0 0.75rem;
+    /* SAMAKAN radius dengan tombol toggle */
+    transition: width 0.3s ease-in-out, height 0.3s ease-in-out, border-radius 0.1s ease-in-out;
+    /* TAMBAHKAN transisi untuk radius */
 }
 
 /* State when sidebar is open */
 #right-sidebar.sidebar-open {
-    width: 280px; /* Expanded width */
-    background-color: var(--color-card-bg); /* Tambahkan ini */
-    height: calc(100vh - 4rem); /* Tambahkan ini (4rem = tinggi header h-16) */
+    width: 280px;
+    /* Expanded width */
+    background-color: var(--color-card-bg);
+    /* Tambahkan ini */
+    height: calc(100vh - 4rem);
+    /* Tambahkan ini (4rem = tinggi header h-16) */
     border-radius: 0;
 }
 
 /* Collapsed Toggle Content (Always visible to be clicked) */
 #right-sidebar-toggle {
     background-color: var(--color-sidebar-toggle-bg);
-    width: 50px; /* Fixed width for the toggle bar */
-    flex-shrink: 0; /* Prevents shrinking */
-    padding: 1rem 0; /* Vertical padding */
-    border-radius: 0.75rem 0 0 0.75rem; /* Rounded on the left side only */
-    display: flex; /* Make it a flex container */
-    flex-direction: column; /* Icon centered vertically */
-    align-items: center; /* Center horizontally */
-    justify-content: center; /* Center vertically */
+    width: 50px;
+    /* Fixed width for the toggle bar */
+    flex-shrink: 0;
+    /* Prevents shrinking */
+    padding: 1rem 0;
+    /* Vertical padding */
+    border-radius: 0.75rem 0 0 0.75rem;
+    /* Rounded on the left side only */
+    display: flex;
+    /* Make it a flex container */
+    flex-direction: column;
+    /* Icon centered vertically */
+    align-items: center;
+    /* Center horizontally */
+    justify-content: center;
+    /* Center vertically */
     cursor: pointer;
 }
-#right-sidebar-toggle i { /* Arrow icon */
+
+#right-sidebar-toggle i {
+    /* Arrow icon */
     color: white;
-    font-size: 1.2rem; /* Make it larger for clickability */
-    transition: transform 0.3s ease-in-out; /* Smooth rotation */
+    font-size: 1.2rem;
+    /* Make it larger for clickability */
+    transition: transform 0.3s ease-in-out;
+    /* Smooth rotation */
 }
 
 /* Rotate arrow when sidebar is open */
 #right-sidebar.sidebar-open #right-sidebar-toggle i {
-    transform: rotate(180deg); /* Rotate to point right when open */
+    transform: rotate(180deg);
+    /* Rotate to point right when open */
 }
 
 /* Full Sidebar Content (Hidden/Visible inside the sidebar) */
 #right-sidebar-full-content {
-    flex-grow: 1; /* Takes remaining space within right-sidebar */
-    width: calc(280px - 50px); /* Specific width when sidebar is open, minus toggle bar */
-    display: none; /* Hidden by default */
-    overflow-y: auto; /* Scrollable content */
-    padding: 1.5rem; /* Padding for content */
+    flex-grow: 1;
+    /* Takes remaining space within right-sidebar */
+    width: calc(280px - 50px);
+    /* Specific width when sidebar is open, minus toggle bar */
+    display: none;
+    /* Hidden by default */
+    overflow-y: auto;
+    /* Scrollable content */
+    padding: 1.5rem;
+    /* Padding for content */
 }
+
 #right-sidebar.sidebar-open #right-sidebar-full-content {
-    display: block; /* Show full content when sidebar is open */
+    display: block;
+    /* Show full content when sidebar is open */
 }
 
 /* Desktop styles: sidebar is static and always visible */
-@media (min-width: 768px) { /* md breakpoint */
+@media (min-width: 768px) {
+
+    /* md breakpoint */
     #right-sidebar.sidebar-open {
-        width: 320px; /* Expanded width on desktop */
+        width: 320px;
+        /* Expanded width on desktop */
     }
 
-    #sidebar-push-content-padding { /* To push main content left when sidebar is closed */
+    #sidebar-push-content-padding {
+        /* To push main content left when sidebar is closed */
         display: block;
-        width: 50px; /* Same as collapsed sidebar width */
+        width: 50px;
+        /* Same as collapsed sidebar width */
         flex-shrink: 0;
         transition: width 0.3s ease-in-out;
     }
-    #right-sidebar.sidebar-open + #sidebar-push-content-padding {
-        width: 280px; /* Same as open sidebar width */
+
+    #right-sidebar.sidebar-open+#sidebar-push-content-padding {
+        width: 280px;
+        /* Same as open sidebar width */
     }
 
     /* Hide the default mobile menu toggle button from the header on desktop */
@@ -284,40 +471,74 @@ footer .text-gray-300 {
     .main-content {
         flex-grow: 1;
     }
+
     /* Overlay is for mobile only */
     #sidebar-overlay {
         display: none !important;
     }
 }
+
 /* Mobile specific styles */
-@media (max-width: 767px) { /* Up to md breakpoint */
+@media (max-width: 767px) {
+
+    /* Up to md breakpoint */
     #right-sidebar {
-        transform: translateX(100%); /* Hidden by default off-screen on mobile */
-        width: 280px; /* Fixed full width when open on mobile */
+        transform: translateX(100%);
+        /* Hidden by default off-screen on mobile */
+        width: 280px;
+        /* Fixed full width when open on mobile */
     }
+
     #right-sidebar.sidebar-open {
-        transform: translateX(0%); /* Slides in */
+        transform: translateX(0%);
+        /* Slides in */
     }
-    #right-sidebar-toggle { /* The toggle button (collapsed content) */
-        display: none; /* Hidden on mobile */
+
+    #right-sidebar-toggle {
+        /* The toggle button (collapsed content) */
+        display: none;
+        /* Hidden on mobile */
     }
-    #right-sidebar-full-content { /* Full content (for mobile) */
-        width: 100%; /* Takes full width of the 280px mobile sidebar */
-        display: block; /* Always show full content when sidebar is open on mobile */
-        padding-left: 1.5rem; /* To account for removed collapsed bar if it were there */
+
+    #right-sidebar-full-content {
+        /* Full content (for mobile) */
+        width: 100%;
+        /* Takes full width of the 280px mobile sidebar */
+        display: block;
+        /* Always show full content when sidebar is open on mobile */
+        padding-left: 1.5rem;
+        /* To account for removed collapsed bar if it were there */
     }
-    #right-sidebar-close-btn { /* Close button always visible in mobile sidebar */
+
+    #right-sidebar-close-btn {
+        /* Close button always visible in mobile sidebar */
         display: block !important;
     }
-    #right-sidebar-close-btn-mobile { /* Ensure mobile close button is visible */
+
+    #right-sidebar-close-btn-mobile {
+        /* Ensure mobile close button is visible */
         display: block !important;
     }
 
     #sidebar-push-content-padding {
-        display: none !important; /* Not needed on mobile as sidebar is fixed overlay */
+        display: none !important;
+        /* Not needed on mobile as sidebar is fixed overlay */
     }
 }
 
-.title-md{
+.title-md {
     font-size: 20px;
+}
+
+
+.container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
 }

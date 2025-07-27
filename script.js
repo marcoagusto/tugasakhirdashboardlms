@@ -317,8 +317,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const coursePercentage =
           currentCourse.totalMaterials > 0
             ? Math.round(
-                (currentCourse.materials / currentCourse.totalMaterials) * 100
-              )
+              (currentCourse.materials / currentCourse.totalMaterials) * 100
+            )
             : 0;
 
         bar.style.width = `${coursePercentage}%`;
@@ -547,55 +547,92 @@ document.addEventListener("DOMContentLoaded", () => {
 let lineChart; // chart global
 
 const datasets = {
-    apps: [{
-        label: "Mobile apps",
-        tension: 0.4,
-        borderWidth: 0,
-        pointRadius: 0,
-        borderColor: "#cb0c9f",
-        borderWidth: 3,
-        backgroundColor: "rgba(203,12,159,0.2)",
-        fill: true,
-        data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
-        maxBarThickness: 6,
-    }],
-    websites: [{
-        label: "Websites",
-        tension: 0.4,
-        borderWidth: 0,
-        pointRadius: 0,
-        borderColor: "#3A416F",
-        borderWidth: 3,
-        backgroundColor: "rgba(20,23,39,0.2)",
-        fill: true,
-        data: [30, 90, 40, 140, 290, 290, 340, 230, 400],
-        maxBarThickness: 6,
-    }],
-    both: [ // menampilkan keduanya
-        {
-            label: "Mobile apps",
-            tension: 0.4,
-            borderWidth: 0,
-            pointRadius: 0,
-            borderColor: "#cb0c9f",
-            borderWidth: 3,
-            backgroundColor: "rgba(203,12,159,0.2)",
-            fill: true,
-            data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
-            maxBarThickness: 6,
-        },
-        {
-            label: "Websites",
-            tension: 0.4,
-            borderWidth: 0,
-            pointRadius: 0,
-            borderColor: "#3A416F",
-            borderWidth: 3,
-            backgroundColor: "rgba(20,23,39,0.2)",
-            fill: true,
-            data: [30, 90, 40, 140, 290, 290, 340, 230, 400],
-            maxBarThickness: 6,
-        }
-    ]
+  apps: [{
+    label: "Mobile apps",
+    tension: 0.4,
+    borderWidth: 0,
+    pointRadius: 0,
+    borderColor: "#cb0c9f",
+    borderWidth: 3,
+    backgroundColor: "rgba(203,12,159,0.2)",
+    fill: true,
+    data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
+    maxBarThickness: 6,
+  }],
+  websites: [{
+    label: "Websites",
+    tension: 0.4,
+    borderWidth: 0,
+    pointRadius: 0,
+    borderColor: "#3A416F",
+    borderWidth: 3,
+    backgroundColor: "rgba(20,23,39,0.2)",
+    fill: true,
+    data: [30, 90, 40, 140, 290, 290, 340, 230, 400],
+    maxBarThickness: 6,
+  }],
+  both: [ // menampilkan keduanya
+    {
+      label: "Mobile apps",
+      tension: 0.4,
+      borderWidth: 0,
+      pointRadius: 0,
+      borderColor: "#cb0c9f",
+      borderWidth: 3,
+      backgroundColor: "rgba(203,12,159,0.2)",
+      fill: true,
+      data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
+      maxBarThickness: 6,
+    },
+    {
+      label: "Websites",
+      tension: 0.4,
+      borderWidth: 0,
+      pointRadius: 0,
+      borderColor: "#3A416F",
+      borderWidth: 3,
+      backgroundColor: "rgba(20,23,39,0.2)",
+      fill: true,
+      data: [30, 90, 40, 140, 290, 290, 340, 230, 400],
+      maxBarThickness: 6,
+    }
+  ]
 };
 
+document.addEventListener("DOMContentLoaded", () => {
+  const leaderboardBtn = document.getElementById("leaderboard-floating-button");
+  const leaderboardModal = document.getElementById("leaderboard-modal");
+  const closeBtn = document.getElementById("close-leaderboard");
+
+  leaderboardBtn.addEventListener("click", () => {
+    leaderboardModal.classList.remove("hidden");
+  });
+
+  closeBtn.addEventListener("click", () => {
+    leaderboardModal.classList.add("hidden");
+  });
+
+  leaderboardModal.addEventListener("click", (e) => {
+    if (e.target === leaderboardModal) leaderboardModal.classList.add("hidden");
+  });
+});
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   const welcomePopup = document.getElementById("welcome-popup");
+//   const closeWelcome = document.getElementById("close-welcome-popup");
+
+//   // Tampilkan otomatis saat load
+//   welcomePopup.classList.remove("hidden");
+
+//   // Tombol close
+//   closeWelcome.addEventListener("click", () => {
+//     welcomePopup.classList.add("hidden");
+//   });
+
+//   // Klik luar area popup menutup juga
+//   welcomePopup.addEventListener("click", (e) => {
+//     if (e.target === welcomePopup) {
+//       welcomePopup.classList.add("hidden");
+//     }
+//   });
+// });
