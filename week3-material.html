@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning Material - Week 3</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard LMS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
+      integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+
+  <body class="bg-gray-50 min-h-screen">
+    <header
+      class="bg-header-bg text-header-text-color p-4 shadow-md flex justify-between items-center h-16 sticky top-0 z-50"
+    >
+      <div class="flex items-center space-x-6">
+        <img
+          src="https://lms.telkomuniversity.ac.id/pluginfile.php/1/theme_remui/logo/1746441839/logo-celoe-small%20%282%29%20%281%29%20%288%29%20%281%29.png"
+          alt="celoe Logo"
+          class="h-8"
+        />
+        <nav class="hidden md:block">
+          <ul class="flex space-x-6 text-sm font-semibold">
+            <li>
+              <a href="#" class="text-header-text-color hover:text-gray-600"
+                >Categories</a
+              >
+            </li>
+            <li>
+              <a href="index.html" class="flex space-x-6 text-sm font-semibold"
+                >Dashboard</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-red-700 font-medium border-b-4 border-red-700 pb-1"
+                >My courses</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex items-center space-x-1 text-header-text-color hover:text-gray-600"
+              >
+                <span>Help Center</span></a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex items-center space-x-1 text-header-text-color hover:text-gray-600"
+              >
+                <span>Courses</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="flex items-center space-x-4">
+        <span class="text-sm cursor-pointer hover:text-gray-600"
+          >Recent <i class="fas fa-chevron-down ml-1 text-xs"></i
+        ></span>
+        <i
+          class="fas fa-bell text-xl cursor-pointer hover:text-gray-600 relative"
+        >
+          <span
+            id="notification-dot"
+            class="absolute top-0 right-0 block h-2.5 w-2.5 rounded-full bg-red-500 ring-2 ring-white"
+          ></span>
+        </i>
+        <img
+          src="https://placehold.co/30x30/cccccc/333333?text=MA"
+          alt="User Avatar"
+          class="w-8 h-8 rounded-full border border-gray-400"
+        />
+        <i
+          class="fas fa-chevron-down text-sm cursor-pointer hover:text-gray-600 text-header-text-color"
+        ></i>
+      </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto mt-10 bg-white p-6 rounded-xl shadow">
+      <nav class="text-sm text-gray-600 mb-4">
+        <ol class="list-reset flex">
+          <li>
+            <a href="#" class="hover:underline text-red-600"
+              >Analisis Jejaring Sosial</a
+            >
+          </li>
+          <li><span class="mx-2">/</span></li>
+          <li><a href="#" class="hover:underline text-red-600">Week 3</a></li>
+          <li><span class="mx-2">/</span></li>
+          <li class="text-gray-800 font-medium">Materials</li>
+        </ol>
+      </nav>
+      <h1 class="text-2xl font-semibold text-gray-800 mb-4">
+        Week 3 - Analisis Jejaring Sosial
+      </h1>
+      <p class="text-gray-600 mb-6">
+        Materi minggu ini akan membahas dasar-dasar analisis jejaring sosial
+        dalam konteks pembelajaran berbasis data. Pastikan Anda membaca seluruh
+        materi dan menonton video yang tersedia.
+      </p>
+
+      <div class="space-y-4">
+        <div class="bg-gray-100 p-4 rounded-md">
+          <h2 class="font-semibold mb-2">Materi PDF</h2>
+          <a href="#" class="text-red-600 hover:underline"
+            >Download: Analisis Jejaring Sosial - Week 3</a
+          >
+        </div>
+
+        <div class="bg-gray-100 p-4 rounded-md">
+          <h2 class="font-semibold mb-2">Video Penjelasan</h2>
+          <video class="w-full rounded-md" controls>
+            <source src="path-to-week3-video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

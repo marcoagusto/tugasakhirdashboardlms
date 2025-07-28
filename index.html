@@ -341,30 +341,9 @@
                             class="flex items-center justify-between p-3 border border-gray-200 rounded-lg mb-3 bg-white shadow-sm">
                             <div class="flex items-center">
                                 <input class="form-check-input mr-3" type="checkbox" id="todo1">
-                                <label class="form-check-label text-text-standard" for="todo1">Belajar
-                                    JavaScript</label>
-                            </div>
-                            <div class="flex items-center space-x-2">
-                                <button class="text-blue-500 hover:text-blue-700" title="Edit">
-                                    <i class="fa-solid fa-pen-to-square" style="color: #b8b8b8;"></i>
-                                </button>
-                                <button class="text-red-500 hover:text-red-700" title="Delete">
-                                    <i class="fa-solid fa-trash-can" style="color: #b8b8b8;"></i>
-                                </button>
-                                <button class="text-yellow-500 hover:text-yellow-600" title="Pin">
-                                    <i class="fa-solid fa-star" style="color: #ffd621;"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Item kedua -->
-                        <div
-                            class="flex items-center justify-between p-3 border border-gray-200 rounded-lg mb-3 bg-white shadow-sm">
-                            <div class="flex items-center">
-                                <input class="form-check-input mr-3" type="checkbox" id="todo2" checked>
-                                <label class="form-check-label text-text-standard" for="todo2">Kerjakan Quiz Analisis
-                                    Jejaring
-                                    Sosial</label>
+                                <a href="week3-material.html" class="text-blue-600 hover:underline">
+                                    Pelajari Week 3 - Analisis Jejaring Sosial
+                                </a>
                             </div>
                             <div class="flex items-center space-x-2">
                                 <button class="text-blue-500 hover:text-blue-700" title="Edit">
@@ -375,6 +354,28 @@
                                 </button>
                                 <button class="text-yellow-500 hover:text-yellow-600" title="Pin">
                                     <i class="fa-solid fa-star" style="color: #b8b8b8;"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Item kedua -->
+                        <div
+                            class="flex items-center justify-between p-3 border border-gray-200 rounded-lg mb-3 bg-white shadow-sm">
+                            <div class="flex items-center">
+                                <input class="form-check-input mr-3" type="checkbox" id="todo2" checked>
+                                <a href="quiz-analisis-jejaring.html" class="text-blue-600 hover:underline">
+                                    Kerjakan Quiz Analisis Jejaring Sosial
+                                </a>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <button class="text-blue-500 hover:text-blue-700" title="Edit">
+                                    <i class="fa-solid fa-pen-to-square" style="color: #b8b8b8;"></i>
+                                </button>
+                                <button class="text-red-500 hover:text-red-700" title="Delete">
+                                    <i class="fa-solid fa-trash-can" style="color: #b8b8b8;"></i>
+                                </button>
+                                <button class="text-yellow-500 hover:text-yellow-600" title="Pin">
+                                    <i class="fa-solid fa-star" style="color: #ffd621;"></i>
                                 </button>
 
                             </div>
@@ -1690,30 +1691,25 @@
             }
         });
     </script>
-
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const welcomePopup = document.getElementById("welcome-popup");
-            const closeWelcome = document.getElementById("close-welcome-popup");
+        document.addEventListener('DOMContentLoaded', function () {
+            const welcomePopup = document.getElementById('welcome-popup');
+            const closeBtn = document.getElementById('close-welcome-popup');
 
-            if (!welcomePopup) {
-                console.warn("Elemen welcome-popup tidak ditemukan.");
-                return;
+            // Gunakan sessionStorage agar hanya muncul sekali per sesi browser
+            const popupSeen = sessionStorage.getItem('welcomePopupShown');
+
+            if (!popupSeen) {
+                welcomePopup.classList.remove('hidden');
             }
 
-            welcomePopup.classList.remove("hidden");
-
-            closeWelcome?.addEventListener("click", () => {
-                welcomePopup.classList.add("hidden");
-            });
-
-            welcomePopup.addEventListener("click", (e) => {
-                if (e.target === welcomePopup) {
-                    welcomePopup.classList.add("hidden");
-                }
+            closeBtn.addEventListener('click', () => {
+                welcomePopup.classList.add('hidden');
+                sessionStorage.setItem('welcomePopupShown', 'true');
             });
         });
     </script>
+
 
 </body>
 
