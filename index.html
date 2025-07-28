@@ -33,7 +33,7 @@
                         <a href="#" class="text-header-text-color hover:text-gray-600">Categories</a>
                     </li>
                     <li>
-                        <a href="#" class="text-header-text-color hover:text-gray-600">Dashboard</a>
+                        <a href="#" class="text-red-700 font-medium border-b-4 border-red-700 pb-1">Dashboard</a>
                     </li>
                     <li>
                         <a href="#" class="text-header-text-color hover:text-gray-600">My courses</a>
@@ -386,37 +386,46 @@
                             Tidak ada tugas/kuis dalam waktu dekat. Waktunya bersantai!
                         </div>
 
-                        <div id="my-achievements" class="mb-6">
-                            <div class="achievements-section">
-                                <h3 class="text-xl font-semibold text-main-accent-text-color mb-4">
-                                    My Achievements
-                                </h3>
-                                <div class="flex flex-wrap gap-4 justify-center" id="badges-container">
-                                    <div class="badge-item bg-yellow-50 p-4 rounded-xl border border-yellow-200 flex flex-col items-center shadow-sm unlocked"
-                                        id="badge-first-quiz">
-                                        <i class="fas fa-trophy gold"></i>
-                                        <span class="font-semibold text-sm mt-2">First Quiz</span>
-                                    </div>
-                                    <div class="badge-item bg-light-grey-bg p-4 rounded-xl border border-gray-200 flex flex-col items-center shadow-sm unlocked"
-                                        id="badge-consistent">
-                                        <i class="fas fa-calendar-check silver"></i>
-                                        <span class="font-semibold text-sm mt-2">Consistent Learner</span>
-                                    </div>
-                                    <div class="badge-item bg-green-50 p-4 rounded-xl border border-green-200 flex flex-col items-center shadow-sm unlocked"
-                                        id="badge-master">
-                                        <i class="fas fa-crown gold"></i>
-                                        <span class="font-semibold text-sm mt-2">Mastered the Material</span>
-                                    </div>
-                                    <div class="badge-item bg-purple-50 p-4 rounded-xl border border-purple-200 flex flex-col items-center shadow-sm unlocked"
-                                        id="badge-fast-learner">
-                                        <i class="fas fa-running gold"></i>
-                                        <span class="font-semibold text-sm mt-2">Fast Learner</span>
-                                    </div>
+                        <div id="my-achievements" class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-2">My Achievements</h3>
+                            <div class="flex flex-wrap gap-4 justify-center" id="badges-container">
+                                <div
+                                    class="badge-item bg-yellow-50 p-4 rounded-xl border border-yellow-200 flex flex-col items-center shadow-sm unlocked relative group cursor-pointer">
+                                    <i class="fas fa-trophy gold text-xl"></i>
+                                    <span class="font-semibold text-sm mt-2">First Quiz</span>
+                                    <div
+                                        class="absolute bottom-full mb-2 hidden group-hover:block bg-black text-white text-xs rounded px-2 py-1 w-max text-center">
+                                        Earned by completing the first quiz</div>
                                 </div>
-                                <p class="text-center text-sm text-text-secondary mt-4 mb-4">
-                                    View all achievements on your profile page.
-                                </p>
+                                <div
+                                    class="badge-item bg-light-grey-bg p-4 rounded-xl border border-gray-200 flex flex-col items-center shadow-sm unlocked relative group cursor-pointer">
+                                    <i class="fas fa-calendar-check silver text-xl"></i>
+                                    <span class="font-semibold text-sm mt-2">Consistent Learner</span>
+                                    <div
+                                        class="absolute bottom-full mb-2 hidden group-hover:block bg-black text-white text-xs rounded px-2 py-1 w-max text-center">
+                                        Logged in and studied for 7 consecutive days</div>
+                                </div>
+                                <div
+                                    class="badge-item bg-green-50 p-4 rounded-xl border border-green-200 flex flex-col items-center shadow-sm unlocked relative group cursor-pointer">
+                                    <i class="fas fa-crown gold text-xl"></i>
+                                    <span class="font-semibold text-sm mt-2">Mastered the Material</span>
+                                    <div
+                                        class="absolute bottom-full mb-2 hidden group-hover:block bg-black text-white text-xs rounded px-2 py-1 w-max text-center">
+                                        Achieved a score above 90% on all modules</div>
+                                </div>
+                                <div
+                                    class="badge-item bg-purple-50 p-4 rounded-xl border border-purple-200 flex flex-col items-center shadow-sm unlocked relative group cursor-pointer">
+                                    <i class="fas fa-running gold text-xl"></i>
+                                    <span class="font-semibold text-sm mt-2">Fast Learner</span>
+                                    <div
+                                        class="absolute bottom-full mb-2 hidden group-hover:block bg-black text-white text-xs rounded px-2 py-1 w-max text-center">
+                                        Completed all assignments before the deadline</div>
+                                </div>
                             </div>
+                            <a href="all-achievements.html"
+                                class="text-center text-sm text-text-secondary mt-4 mb-4 hover:underline mt-4 block text-right">
+                                View all achievements
+                            </a>
                         </div>
                     </div>
 
@@ -522,7 +531,7 @@
                         <li class="p-2 bg-gray-100 rounded-lg flex justify-between items-center">
                             <span class="font-semibold" id="leader-2">2. RAIHAN</span>
                             <span class="text-text-standard" id="score-2">2200 Points</span>
-                        </li>   
+                        </li>
 
                         <!-- Top 3 -->
                         <li class="p-2 flex justify-between items-center">

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Achievements</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
+      integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body class="bg-gray-100 text-gray-800">
+    <!-- Top Navbar (updated to match index.html layout) -->
+    <header
+      class="bg-header-bg text-header-text-color p-4 shadow-md flex justify-between items-center h-16 sticky top-0 z-50"
+    >
+      <div class="flex items-center space-x-6">
+        <img
+          src="https://lms.telkomuniversity.ac.id/pluginfile.php/1/theme_remui/logo/1746441839/logo-celoe-small%20%282%29%20%281%29%20%288%29%20%281%29.png"
+          alt="celoe Logo"
+          class="h-8"
+        />
+        <nav class="hidden md:block">
+          <ul class="flex space-x-6 text-sm font-semibold">
+            <li>
+              <a href="#" class="text-header-text-color hover:text-gray-600"
+                >Categories</a
+              >
+            </li>
+            <li>
+              <a href="#" class="flex space-x-6 text-sm font-semibold"
+                >Dashboard</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-header-text-color hover:text-gray-600"
+                >My courses</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex items-center space-x-1 text-header-text-color hover:text-gray-600"
+              >
+                <span>Help Center</span></a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex items-center space-x-1 text-header-text-color hover:text-gray-600"
+              >
+                <span>Courses</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="flex items-center space-x-4">
+        <span class="text-sm cursor-pointer hover:text-gray-600"
+          >Recent <i class="fas fa-chevron-down ml-1 text-xs"></i
+        ></span>
+        <i
+          class="fas fa-bell text-xl cursor-pointer hover:text-gray-600 relative"
+        >
+          <span
+            id="notification-dot"
+            class="absolute top-0 right-0 block h-2.5 w-2.5 rounded-full bg-red-500 ring-2 ring-white"
+          ></span>
+        </i>
+        <img
+          src="https://placehold.co/30x30/cccccc/333333?text=MA"
+          alt="User Avatar"
+          class="w-8 h-8 rounded-full border border-gray-400"
+        />
+        <i
+          class="fas fa-chevron-down text-sm cursor-pointer hover:text-gray-600 text-header-text-color"
+        ></i>
+      </div>
+    </header>
+    <!-- <nav class="bg-white shadow-md px-6 py-4 sticky top-0 z-50">
+      <div class="flex justify-between items-center">
+        <img
+          src="https://lms.telkomuniversity.ac.id/pluginfile.php/1/theme_remui/logo/1746441839/logo-celoe-small%20%282%29%20%281%29%20%288%29%20%281%29.png"
+          alt="celoe Logo"
+          class="h-8"
+        />
+        <ul class="flex space-x-6 items-center">
+          <li>
+            <a href="#" class="text-gray-700 hover:text-red-700">Categories</a>
+          </li>
+          <li>
+            <a href="index.html" class="text-gray-700 hover:text-red-700"
+              >Dashboard</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-gray-700 hover:text-red-700">My Courses</a>
+          </li>
+          <li>
+            <a href="#" class="text-gray-700 hover:text-red-700">Help Center</a>
+          </li>
+          <li>
+            <a href="#" class="text-gray-700 hover:text-red-700">Courses</a>
+          </li>
+        </ul>
+        <div class="flex items-center space-x-4">
+          <span class="text-sm cursor-pointer hover:text-gray-600"
+            >Recent <i class="fas fa-chevron-down ml-1 text-xs"></i
+          ></span>
+          <i
+            class="fas fa-bell text-xl cursor-pointer hover:text-gray-600 relative"
+          >
+            <span
+              id="notification-dot"
+              class="absolute top-0 right-0 block h-2.5 w-2.5 rounded-full bg-red-500 ring-2 ring-white"
+            ></span>
+          </i>
+          <img
+            src="https://placehold.co/30x30/cccccc/333333?text=MA"
+            alt="User Avatar"
+            class="w-8 h-8 rounded-full border border-gray-400"
+          />
+          <i
+            class="fas fa-chevron-down text-sm cursor-pointer hover:text-gray-600 text-header-text-color"
+          ></i>
+        </div>
+      </div>
+    </nav> -->
+
+    <main class="p-6 max-w-7xl mx-auto">
+      <h1 class="text-3xl font-semibold mb-4">All Achievements</h1>
+      <p class="text-gray-600 mb-6">
+        Complete the following tasks to earn badges and level up your learning
+        experience.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Unlocked Badges -->
+        <div
+          class="bg-white p-6 rounded-xl shadow border border-gray-200 text-center"
+        >
+          <i class="fas fa-trophy text-yellow-500 text-4xl"></i>
+          <h2 class="font-semibold mt-4">First Quiz</h2>
+          <p class="text-sm text-gray-600">
+            Complete your first quiz on any course.
+          </p>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl shadow border border-gray-200 text-center"
+        >
+          <i class="fas fa-calendar-check text-gray-500 text-4xl"></i>
+          <h2 class="font-semibold mt-4">Consistent Learner</h2>
+          <p class="text-sm text-gray-600">
+            Login and study for 7 consecutive days.
+          </p>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl shadow border border-gray-200 text-center"
+        >
+          <i class="fas fa-crown text-yellow-400 text-4xl"></i>
+          <h2 class="font-semibold mt-4">Mastered the Material</h2>
+          <p class="text-sm text-gray-600">
+            Achieve 90% or higher on all modules of a course.
+          </p>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl shadow border border-gray-200 text-center"
+        >
+          <i class="fas fa-running text-purple-400 text-4xl"></i>
+          <h2 class="font-semibold mt-4">Fast Learner</h2>
+          <p class="text-sm text-gray-600">
+            Complete all assignments before their deadlines.
+          </p>
+        </div>
+
+        <!-- Locked Badges -->
+        <div
+          class="bg-white p-6 rounded-xl shadow border border-gray-200 text-center opacity-50"
+        >
+          <i class="fas fa-brain text-gray-400 text-4xl"></i>
+          <h2 class="font-semibold mt-4">Critical Thinker</h2>
+          <p class="text-sm text-gray-600">
+            Complete a reflection journal in 3 different courses.
+          </p>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl shadow border border-gray-200 text-center opacity-50"
+        >
+          <i class="fas fa-users text-gray-400 text-4xl"></i>
+          <h2 class="font-semibold mt-4">Team Collaborator</h2>
+          <p class="text-sm text-gray-600">
+            Contribute to a group project successfully.
+          </p>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl shadow border border-gray-200 text-center opacity-50"
+        >
+          <i class="fas fa-lightbulb text-gray-400 text-4xl"></i>
+          <h2 class="font-semibold mt-4">Idea Generator</h2>
+          <p class="text-sm text-gray-600">
+            Submit 5 ideas in the innovation forum.
+          </p>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl shadow border border-gray-200 text-center opacity-50"
+        >
+          <i class="fas fa-hand-holding-heart text-gray-400 text-4xl"></i>
+          <h2 class="font-semibold mt-4">Peer Helper</h2>
+          <p class="text-sm text-gray-600">
+            Provide feedback on 3 peers' assignments.
+          </p>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl shadow border border-gray-200 text-center opacity-50"
+        >
+          <i class="fas fa-chart-line text-gray-400 text-4xl"></i>
+          <h2 class="font-semibold mt-4">Progress Tracker</h2>
+          <p class="text-sm text-gray-600">
+            Check your dashboard daily for a week.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex justify-end mt-8">
+        <nav aria-label="Achievements Pagination">
+          <ul class="inline-flex items-center -space-x-px">
+            <li>
+              <a
+                href="#"
+                class="px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-black"
+                >Previous</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="px-3 py-2 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"
+                >1</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-black"
+                >2</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-black"
+                >3</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-black"
+                >Next</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="text-center mt-10">
+        <a
+          href="index.html"
+          class="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-lg shadow"
+          >Back to Dashboard</a
+        >
+      </div>
+    </main>
+  </body>
+</html>
