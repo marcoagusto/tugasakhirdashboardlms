@@ -113,6 +113,32 @@
             <img src="https://placehold.co/30x30/cccccc/333333?text=MA" alt="User Avatar"
                 class="w-8 h-8 rounded-full border border-gray-400" />
             <i class="fas fa-chevron-down text-sm cursor-pointer hover:text-gray-600 text-header-text-color"></i>
+            <div id="user-dropdown"
+                class="hidden absolute top-16 right-6 bg-white border border-gray-200 rounded-lg shadow-lg w-56 z-50">
+                <ul class="py-2 text-sm text-gray-700">
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100"><i
+                                class="fas fa-user mr-2"></i>Profile</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100"><i
+                                class="fas fa-graduation-cap mr-2"></i>Grades</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100"><i
+                                class="fas fa-calendar-alt mr-2"></i>Calendar</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100"><i
+                                class="fas fa-folder-open mr-2"></i>Private files</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100"><i
+                                class="fas fa-file-alt mr-2"></i>Reports</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100"><i
+                                class="fas fa-cogs mr-2"></i>Preferences</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100"><i
+                                class="fas fa-language mr-2"></i>Language</a></li>
+                    <li><a href="#" class="block px-4 py-2 text-red-600 hover:bg-red-50"><i
+                                class="fas fa-sign-out-alt mr-2"></i>Log out</a></li>
+                </ul>
+            </div>
+            <i class="fas fa-moon text-xl cursor-pointer hover:text-gray-600"></i>
+            <label class="switch">
+                <input type="checkbox" id="darkModeToggle">
+                <span class="slider round"></span>
+            </label>
         </div>
     </header>
 
@@ -128,11 +154,11 @@
                 <!-- Menu Utama -->
             </h3>
             <ul class="space-y-3">
-                <li>
+                <!-- <li>
                     <a href="#"
                         class="flex items-center space-x-3 text-text-standard hover:bg-light-grey-bg hover:text-main-accent-text-color p-2 rounded-lg transition-colors duration-200"><i
                             class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a>
-                </li>
+                </li> -->
                 <li>
                     <a href="#"
                         class="flex items-center space-x-3 text-text-standard hover:bg-light-grey-bg hover:text-main-accent-text-color p-2 rounded-lg transition-colors duration-200"><i
@@ -1130,19 +1156,21 @@
                             class="bg-gray-200 text-gray-700 px-4 py-2 rounded-full hover:bg-gray-300 transition-colors duration-200 whitespace-nowrap">FIKRAM</button>
                         <button class="bg-green-600 text-white px-4 py-2 rounded-full whitespace-nowrap">Dr.
                             YUDHIS</button>
+                        <button
+                            class="bg-gray-200 font-bold text-gray-700 px-4 py-2 rounded-full hover:bg-gray-300 transition-colors duration-200 whitespace-nowrap">+</button>    
                     </div>
 
                     <div class="space-y-3" id="dosen-messages-preview">
                         <p class="text-gray-700">
-                            <strong>Rizky:</strong> Selamat siang Pak, saya masih belum mengerti mengenai konsep
+                            <strong>Marco:</strong> Selamat siang Pak, saya masih belum mengerti mengenai konsep
                             CNN, apakah Bapak ada waktu luang?
                         </p>
                         <p class="text-gray-700">
-                            <strong>Dr. YUDHIS:</strong> Halo Rizky, konsep CNN
+                            <strong>Dr. YUDHIS:</strong> Halo Marco, konsep CNN
                             yang mana? Saya online sekarang.
                         </p>
                         <p class="text-gray-700">
-                            <strong>Rizky:</strong> Tentang Arsitekturnya, Pak. Saya
+                            <strong>Marco:</strong> Tentang Arsitekturnya, Pak. Saya
                             masih bingung penerapannya.
                         </p>
                         <p class="text-gray-700">
@@ -1150,14 +1178,24 @@
                             singkat via Teams, mau sekarang?
                         </p>
                     </div>
-
-                    <p class="text-sm text-gray-600 mt-3 flex items-center justify-end">
+                    <p class="text-sm text-gray-600 mt-1 flex items-center justify-end">
                         <span id="dosen-statistika-status"
                             class="w-3 h-3 rounded-full mr-2 bg-green-500"></span>Dr.YUDHIS:
                         <span id="dosen-statistika-text">Online</span>
                     </p>
+                    <div class="mt-4 flex items-center border border-gray-300 rounded-lg px-3 py-2">
+                        <input type="text" placeholder="Type a message..."
+                            class="flex-1 focus:outline-none text-sm text-gray-700" />
+                        <button class="text-gray-500 hover:text-gray-700 ml-3" title="Attach File">
+                            <i class="fas fa-paperclip"></i>
+                        </button>
+                        <button class="text-gray-500 hover:text-gray-700 ml-3" title="Emoji">
+                            <i class="fas fa-smile"></i>
+                        </button>
+                    </div>
+
                     <button
-                        class="mt-5 bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300 transition-colors duration-200 w-full text-center">
+                        class="mt-3 bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300 transition-colors duration-200 w-full text-center">
                         View all messages
                     </button>
                 </div>
@@ -1708,6 +1746,54 @@
                 sessionStorage.setItem('welcomePopupShown', 'true');
             });
         });
+    </script>
+
+    <script>
+        const dropdownToggle = document.querySelector('.fa-chevron-down.text-sm'); // pastikan pilih icon yang dekat avatar
+        const dropdownMenu = document.getElementById('user-dropdown');
+
+        dropdownToggle.addEventListener('click', () => {
+            dropdownMenu.classList.toggle('hidden');
+        });
+
+        // Tutup dropdown jika klik di luar area dropdown
+        document.addEventListener('click', function (event) {
+            if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.classList.add('hidden');
+            }
+        });
+    </script>
+
+    <script>
+        const sidebar = document.getElementById("right-sidebar");
+        const toggleBtn = document.getElementById("right-sidebar-toggle");
+        const closeBtn = document.getElementById("right-sidebar-close-btn");
+        const trophyBtn = document.getElementById("leaderboard-floating-button");
+
+        // Toggle sidebar open/close
+        toggleBtn.addEventListener("click", () => {
+            const isOpen = sidebar.classList.contains("sidebar-open");
+
+            // Toggle sidebar state
+            sidebar.classList.toggle("sidebar-open");
+            sidebar.classList.toggle("sidebar-closed");
+
+            // Toggle trophy button visibility
+            if (!isOpen) {
+                trophyBtn.classList.add("hidden");
+            } else {
+                trophyBtn.classList.remove("hidden");
+            }
+        });
+
+        // If you have a close button inside sidebar (e.g., an "X" button)
+        if (closeBtn) {
+            closeBtn.addEventListener("click", () => {
+                sidebar.classList.remove("sidebar-open");
+                sidebar.classList.add("sidebar-closed");
+                trophyBtn.classList.remove("hidden");
+            });
+        }
     </script>
 
 

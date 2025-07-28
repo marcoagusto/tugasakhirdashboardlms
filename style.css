@@ -542,3 +542,399 @@ footer .text-gray-300 {
         padding-right: 3rem;
     }
 }
+
+/* Existing CSS */
+
+/* Dark Mode Switch Styling */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 36px; /* Reduced width */
+    height: 20px; /* Reduced height */
+    margin-left: 10px; /* Space between moon icon and switch */
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 20px; /* Rounded corners */
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px; /* Reduced size */
+    width: 16px; /* Reduced size */
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%; /* Make it circular */
+}
+
+input:checked + .slider {
+    background-color: #667EEA; /* A pleasant purple for dark mode toggle */
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #667EEA;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(16px); /* Adjusted translation */
+    -ms-transform: translateX(16px); /* Adjusted translation */
+    transform: translateX(16px); /* Adjusted translation */
+}
+
+/* Dark Mode Styles (Add these rules) */
+body.dark-mode {
+    background-color: #1a202c; /* Darker background */
+    color: #e2e8f0; /* Lighter text */
+}
+
+body.dark-mode .bg-header-bg {
+    background-color: #2d3748; /* Darker header */
+}
+
+body.dark-mode .text-header-text-color {
+    color: #cbd5e0; /* Lighter header text */
+}
+
+body.dark-mode .card,
+body.dark-mode .bg-white,
+body.dark-mode .bg-gray-50,
+body.dark-mode .bg-gray-100 {
+    background-color: #2d3748; /* Darker cards and backgrounds */
+    color: #e2e8f0;
+    border-color: #4a5568; /* Darker borders */
+}
+
+body.dark-mode .text-gray-800 {
+    color: #e2e8f0; /* Lighter general text */
+}
+
+body.dark-mode .text-text-standard {
+    color: #cbd5e0; /* Lighter standard text */
+}
+
+body.dark-mode .border-gray-200 {
+    border-color: #4a5568; /* Darker borders */
+}
+
+body.dark-mode .text-text-secondary {
+    color: #a0aec0; /* Slightly lighter secondary text */
+}
+
+body.dark-mode .bg-info-banner-bg {
+    background-color: #4a5568; /* Darker info banner */
+    color: #e2e8f0;
+}
+
+body.dark-mode .bg-view-course-button {
+    background-color: #6366f1; /* Adjust button color for dark mode */
+}
+
+body.dark-mode .hover\\:bg-hover-view-course:hover {
+    background-color: #4338ca; /* Adjust hover color */
+}
+
+body.dark-mode .bg-yellow-50 {
+    background-color: #4a3200; /* Darker yellow badge */
+    border-color: #6f4e37;
+}
+
+body.dark-mode .bg-green-50 {
+    background-color: #0c4a07; /* Darker green badge */
+    border-color: #1e6f16;
+}
+
+body.dark-mode .bg-purple-50 {
+    background-color: #2d0c4a; /* Darker purple badge */
+    border-color: #4e1e6f;
+}
+
+body.dark-mode .bg-light-grey-bg {
+    background-color: #4a4a4a; /* Darker light grey badge */
+    border-color: #6f6f6f;
+}
+
+body.dark-mode .text-main-accent-text-color {
+    color: #9f7aea; /* Adjust main accent text for better contrast */
+}
+
+body.dark-mode .text-red-700 {
+    color: #fca5a5; /* Adjust red text for better contrast */
+}
+
+body.dark-mode .text-blue-600 {
+    color: #93c5fd; /* Adjust blue links */
+}
+
+/* Specific adjustments for input fields in dark mode */
+body.dark-mode input[type="text"] {
+    background-color: #2d3748;
+    border-color: #4a5568;
+    color: #e2e8f0;
+}
+
+body.dark-mode .progress-bar {
+    background-color: #9f7aea; /* Example: make progress bars more visible */
+}
+
+body.dark-mode .progress-bar.bg-success {
+    background-color: #48bb78;
+}
+
+body.dark-mode .progress-bar.bg-warning {
+    background-color: #f6ad55;
+}
+
+body.dark-mode .progress-bar.bg-danger {
+    background-color: #ef4444;
+}
+
+body.dark-mode .dropdown-menu {
+    background-color: #2d3748;
+    border-color: #4a5568;
+}
+
+body.dark-mode .dropdown-item {
+    color: #e2e8f0;
+}
+
+body.dark-mode .dropdown-item:hover {
+    background-color: #4a5568;
+}
+
+body.dark-mode .btn-secondary {
+    background-color: #4a5568;
+    border-color: #4a5568;
+    color: #e2e8f0;
+}
+
+body.dark-mode .btn-secondary:hover {
+    background-color: #626f82;
+    border-color: #626f82;
+}
+
+body.dark-mode .btn-primary {
+    background-color: #9f7aea;
+    border-color: #9f7aea;
+    color: #ffffff;
+}
+
+body.dark-mode .btn-primary:hover {
+    background-color: #805ad5;
+    border-color: #805ad5;
+}/* Existing CSS */
+
+/* Dark Mode Switch Styling */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 36px; /* Reduced width */
+    height: 20px; /* Reduced height */
+    margin-left: 10px; /* Space between moon icon and switch */
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 20px; /* Rounded corners */
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px; /* Reduced size */
+    width: 16px; /* Reduced size */
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%; /* Make it circular */
+}
+
+input:checked + .slider {
+    background-color: #667EEA; /* A pleasant purple for dark mode toggle */
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #667EEA;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(16px); /* Adjusted translation */
+    -ms-transform: translateX(16px); /* Adjusted translation */
+    transform: translateX(16px); /* Adjusted translation */
+}
+
+/* Dark Mode Styles (Add these rules) */
+body.dark-mode {
+    background-color: #1a202c; /* Darker background */
+    color: #e2e8f0; /* Lighter text */
+}
+
+body.dark-mode .bg-header-bg {
+    background-color: #2d3748; /* Darker header */
+}
+
+body.dark-mode .text-header-text-color {
+    color: #cbd5e0; /* Lighter header text */
+}
+
+body.dark-mode .card,
+body.dark-mode .bg-white,
+body.dark-mode .bg-gray-50,
+body.dark-mode .bg-gray-100 {
+    background-color: #2d3748; /* Darker cards and backgrounds */
+    color: #e2e8f0;
+    border-color: #4a5568; /* Darker borders */
+}
+
+body.dark-mode .text-gray-800 {
+    color: #e2e8f0; /* Lighter general text */
+}
+
+body.dark-mode .text-text-standard {
+    color: #cbd5e0; /* Lighter standard text */
+}
+
+body.dark-mode .border-gray-200 {
+    border-color: #4a5568; /* Darker borders */
+}
+
+body.dark-mode .text-text-secondary {
+    color: #a0aec0; /* Slightly lighter secondary text */
+}
+
+body.dark-mode .bg-info-banner-bg {
+    background-color: #4a5568; /* Darker info banner */
+    color: #e2e8f0;
+}
+
+body.dark-mode .bg-view-course-button {
+    background-color: #6366f1; /* Adjust button color for dark mode */
+}
+
+body.dark-mode .hover\\:bg-hover-view-course:hover {
+    background-color: #4338ca; /* Adjust hover color */
+}
+
+body.dark-mode .bg-yellow-50 {
+    background-color: #4a3200; /* Darker yellow badge */
+    border-color: #6f4e37;
+}
+
+body.dark-mode .bg-green-50 {
+    background-color: #0c4a07; /* Darker green badge */
+    border-color: #1e6f16;
+}
+
+body.dark-mode .bg-purple-50 {
+    background-color: #2d0c4a; /* Darker purple badge */
+    border-color: #4e1e6f;
+}
+
+body.dark-mode .bg-light-grey-bg {
+    background-color: #4a4a4a; /* Darker light grey badge */
+    border-color: #6f6f6f;
+}
+
+body.dark-mode .text-main-accent-text-color {
+    color: #9f7aea; /* Adjust main accent text for better contrast */
+}
+
+body.dark-mode .text-red-700 {
+    color: #fca5a5; /* Adjust red text for better contrast */
+}
+
+body.dark-mode .text-blue-600 {
+    color: #93c5fd; /* Adjust blue links */
+}
+
+/* Specific adjustments for input fields in dark mode */
+body.dark-mode input[type="text"] {
+    background-color: #2d3748;
+    border-color: #4a5568;
+    color: #e2e8f0;
+}
+
+body.dark-mode .progress-bar {
+    background-color: #9f7aea; /* Example: make progress bars more visible */
+}
+
+body.dark-mode .progress-bar.bg-success {
+    background-color: #48bb78;
+}
+
+body.dark-mode .progress-bar.bg-warning {
+    background-color: #f6ad55;
+}
+
+body.dark-mode .progress-bar.bg-danger {
+    background-color: #ef4444;
+}
+
+body.dark-mode .dropdown-menu {
+    background-color: #2d3748;
+    border-color: #4a5568;
+}
+
+body.dark-mode .dropdown-item {
+    color: #e2e8f0;
+}
+
+body.dark-mode .dropdown-item:hover {
+    background-color: #4a5568;
+}
+
+body.dark-mode .btn-secondary {
+    background-color: #4a5568;
+    border-color: #4a5568;
+    color: #e2e8f0;
+}
+
+body.dark-mode .btn-secondary:hover {
+    background-color: #626f82;
+    border-color: #626f82;
+}
+
+body.dark-mode .btn-primary {
+    background-color: #9f7aea;
+    border-color: #9f7aea;
+    color: #ffffff;
+}
+
+body.dark-mode .btn-primary:hover {
+    background-color: #805ad5;
+    border-color: #805ad5;
+}
